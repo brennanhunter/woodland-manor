@@ -1,7 +1,18 @@
 'use client';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <>
       <header className="sticky top-0 z-50 bg-white shadow-sm">
@@ -43,15 +54,80 @@ const Header = () => {
             <div className="md:hidden">
               <button
                 type="button"
-                className="text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900"
+                onClick={toggleMobileMenu}
+                className="text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition-colors"
                 aria-label="Toggle menu"
+                aria-expanded={isMobileMenuOpen}
               >
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+                {isMobileMenuOpen ? (
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
               </button>
             </div>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200 z-50">
+              <nav className="py-2">
+                <Link 
+                  href="/" 
+                  onClick={closeMobileMenu}
+                  className="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors font-medium"
+                >
+                  Home
+                </Link>
+                <Link 
+                  href="/about" 
+                  onClick={closeMobileMenu}
+                  className="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors font-medium"
+                >
+                  About
+                </Link>
+                <Link 
+                  href="/board" 
+                  onClick={closeMobileMenu}
+                  className="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors font-medium"
+                >
+                  Board
+                </Link>
+                <Link 
+                  href="/faq" 
+                  onClick={closeMobileMenu}
+                  className="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors font-medium"
+                >
+                  FAQ
+                </Link>
+                <Link 
+                  href="/downloads" 
+                  onClick={closeMobileMenu}
+                  className="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors font-medium"
+                >
+                  Downloads
+                </Link>
+                <Link 
+                  href="/calendar" 
+                  onClick={closeMobileMenu}
+                  className="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors font-medium"
+                >
+                  Calendar
+                </Link>
+                <Link 
+                  href="/contact" 
+                  onClick={closeMobileMenu}
+                  className="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors font-medium"
+                >
+                  Contact
+                </Link>
+              </nav>
+            </div>
+          )}
         </div>
       </header>
     </>
