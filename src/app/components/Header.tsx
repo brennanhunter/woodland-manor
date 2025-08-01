@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -19,9 +20,21 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-32">
             {/* Logo/Title */}
-            <div className="flex-shrink-0 -ml-32">
-              <Link href="/" className="text-4xl md:text-4xl font-bold text-gray-800 hover:text-gray-600 transition-colors font-bebas">
-                WOODLAND MANOR
+            <div className="flex-shrink-0">
+              <Link href="/" className="flex items-center">
+                <div className="relative w-32 h-32 mr-3">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Woodland Manor Logo"
+                    fill
+                    style={{ objectFit: 'contain' }}
+                    priority
+                    quality={90}
+                  />
+                </div>
+                <span className="text-2xl md:text-3xl font-bold text-gray-800 hover:text-gray-600 transition-colors font-bebas">
+                  WOODLAND MANOR
+                </span>
               </Link>
             </div>
 
