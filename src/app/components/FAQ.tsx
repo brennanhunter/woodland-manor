@@ -83,7 +83,7 @@ const FAQ: React.FC = () => {
           
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Find answers to the most commonly asked questions about our community, 
-            policies, and services. If you don't find what you're looking for, 
+            policies, and services. If you don&apos;t find what you&apos;re looking for, 
             feel free to contact our office.
           </p>
         </div>
