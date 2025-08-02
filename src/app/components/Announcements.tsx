@@ -10,7 +10,12 @@ const Announcements = () => {
     { date: 'October 13, 2025', type: 'Monthly Board Meeting', time: '6:30 PM' },
     { date: 'November 10, 2025', type: 'Monthly Board Meeting', time: '6:30 PM' },
     { date: 'December 8, 2025', type: 'Monthly Board Meeting', time: '6:30 PM' },
-    { date: 'March 14, 2026', type: 'Annual Board Meeting', time: '10:00 AM', special: true }
+    { date: 'January 12, 2026', type: 'Monthly Board Meeting', time: '6:30 PM' },
+    { date: 'February 9, 2026', type: 'Monthly Board Meeting', time: '6:30 PM' },
+    { date: 'March 9, 2026', type: 'Monthly Board Meeting', time: '6:30 PM' },
+    { date: 'March 28, 2026', type: 'Annual Board Meeting', time: '10:00 AM', special: true },
+    { date: 'April 13, 2026', type: 'Monthly Board Meeting', time: '6:30 PM' },
+    { date: 'May 11, 2026', type: 'Monthly Board Meeting', time: '6:30 PM' }
   ];
 
   return (
@@ -143,6 +148,19 @@ const Announcements = () => {
               <h3 className="text-2xl font-bold text-gray-900">Upcoming Events</h3>
             </div>
 
+            {/* Meeting Info Header */}
+            <div className="bg-white p-4 rounded-lg border border-blue-200 mb-6">
+              <h4 className="font-bold text-blue-800 mb-2">Woodland Mobile Home Association Inc.</h4>
+              <p className="text-gray-700 text-sm mb-1">
+                <strong>Monthly Meetings:</strong> Second Monday of the month at 6:30 PM
+              </p>
+              <p className="text-gray-700 text-sm mb-2">
+                <strong>Location:</strong> The Clubhouse<br />
+                4119 Woodland Circle<br />
+                DeLand, FL 32724
+              </p>
+            </div>
+
             <div className="space-y-4 mb-8">
               {upcomingEvents.map((event, index) => (
                 <div 
@@ -163,7 +181,7 @@ const Announcements = () => {
                       </div>
                       {event.special && (
                         <p className="text-green-700 text-sm mt-2 font-medium">
-                          All community members encouraged to attend
+                          Annual meeting - All community members encouraged to attend
                         </p>
                       )}
                     </div>
@@ -173,7 +191,7 @@ const Announcements = () => {
 
               <div className="p-4 bg-gray-100 rounded-lg text-center">
                 <p className="text-gray-600 text-sm italic">
-                  Monthly meetings continue through May 2026
+                  Monthly meetings: Second Monday of each month at 6:30 PM
                   <br />
                   <span className="text-gray-500">No meetings June - September</span>
                 </p>
