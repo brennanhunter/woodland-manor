@@ -1,9 +1,9 @@
-import Documents from "@/app/components/Documents";
+import Downloads from "@/components/Documents";
 
 const DownloadsPage: React.FC = () => {
   return (
     <div>
-      <Documents />
+      <Downloads />
     </div>
   );
 };

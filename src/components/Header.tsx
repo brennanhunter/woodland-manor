@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white shadow-sm">
+      <header className="sticky top-0 z-50 bg-woodland-cream shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-32">
             {/* Logo/Title */}
@@ -32,33 +32,30 @@ const Header = () => {
                     quality={90}
                   />
                 </div>
-                <span className="text-2xl md:text-3xl font-bold text-gray-800 hover:text-gray-600 transition-colors font-bebas">
-                  WOODLAND MANOR
-                </span>
               </Link>
             </div>
 
             {/* Navigation */}
             <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-lg font-medium transition-colors">
+              <Link href="/" className="text-woodland-primary hover:text-woodland-secondary px-3 py-2 text-lg font-medium transition-colors">
                 Home
               </Link>
-              <Link href="/about" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-lg font-medium transition-colors">
+              <Link href="/about" className="text-woodland-primary hover:text-woodland-secondary px-3 py-2 text-lg font-medium transition-colors">
                 About
               </Link>
-              <Link href="/board" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-lg font-medium transition-colors">
+              <Link href="/board" className="text-woodland-primary hover:text-woodland-secondary px-3 py-2 text-lg font-medium transition-colors">
                 Board
               </Link>
-              <Link href="/faq" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-lg font-medium transition-colors">
+              <Link href="/faq" className="text-woodland-primary hover:text-woodland-secondary px-3 py-2 text-lg font-medium transition-colors">
                 FAQ
               </Link>
-              <Link href="/downloads" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-lg font-medium transition-colors">
+              <Link href="/downloads" className="text-woodland-primary hover:text-woodland-secondary px-3 py-2 text-lg font-medium transition-colors">
                 Downloads
               </Link>
-              <Link href="/calendar" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-lg font-medium transition-colors">
+              <Link href="/calendar" className="text-woodland-primary hover:text-woodland-secondary px-3 py-2 text-lg font-medium transition-colors">
                 Calendar
               </Link>
-              <Link href="/contact" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-lg font-medium transition-colors">
+              <Link href="/contact" className="text-woodland-primary hover:text-woodland-secondary px-3 py-2 text-lg font-medium transition-colors">
                 Contact
               </Link>
             </nav>
@@ -68,7 +65,7 @@ const Header = () => {
               <button
                 type="button"
                 onClick={toggleMobileMenu}
-                className="text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition-colors"
+                className="text-woodland-primary hover:text-woodland-secondary focus:outline-none focus:text-woodland-secondary transition-colors"
                 aria-label="Toggle menu"
                 aria-expanded={isMobileMenuOpen}
               >
@@ -87,54 +84,54 @@ const Header = () => {
 
           {/* Mobile Navigation Menu */}
           {isMobileMenuOpen && (
-            <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200 z-50">
+            <div className="md:hidden absolute top-full left-0 right-0 bg-woodland-cream shadow-lg border-t border-gray-200 z-50">
               <nav className="py-2">
                 <Link 
                   href="/" 
                   onClick={closeMobileMenu}
-                  className="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors font-medium"
+                  className="block px-4 py-3 text-woodland-primary hover:text-woodland-secondary hover:bg-gray-50 transition-colors font-medium"
                 >
                   Home
                 </Link>
                 <Link 
                   href="/about" 
                   onClick={closeMobileMenu}
-                  className="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors font-medium"
+                  className="block px-4 py-3 text-woodland-primary hover:text-woodland-secondary hover:bg-gray-50 transition-colors font-medium"
                 >
                   About
                 </Link>
                 <Link 
                   href="/board" 
                   onClick={closeMobileMenu}
-                  className="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors font-medium"
+                  className="block px-4 py-3 text-woodland-primary hover:text-woodland-secondary hover:bg-gray-50 transition-colors font-medium"
                 >
                   Board
                 </Link>
                 <Link 
                   href="/faq" 
                   onClick={closeMobileMenu}
-                  className="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors font-medium"
+                  className="block px-4 py-3 text-woodland-primary hover:text-woodland-secondary hover:bg-gray-50 transition-colors font-medium"
                 >
                   FAQ
                 </Link>
                 <Link 
                   href="/downloads" 
                   onClick={closeMobileMenu}
-                  className="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors font-medium"
+                  className="block px-4 py-3 text-woodland-primary hover:text-woodland-secondary hover:bg-gray-50 transition-colors font-medium"
                 >
                   Downloads
                 </Link>
                 <Link 
                   href="/calendar" 
                   onClick={closeMobileMenu}
-                  className="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors font-medium"
+                  className="block px-4 py-3 text-woodland-primary hover:text-woodland-secondary hover:bg-gray-50 transition-colors font-medium"
                 >
                   Calendar
                 </Link>
                 <Link 
                   href="/contact" 
                   onClick={closeMobileMenu}
-                  className="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors font-medium"
+                  className="block px-4 py-3 text-woodland-primary hover:text-woodland-secondary hover:bg-gray-50 transition-colors font-medium"
                 >
                   Contact
                 </Link>

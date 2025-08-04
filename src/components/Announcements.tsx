@@ -19,13 +19,13 @@ const Announcements = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-woodland-cream">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
-            <Megaphone className="w-8 h-8 text-blue-600" />
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-woodland-cream rounded-full mb-4">
+            <Megaphone className="w-8 h-8 text-woodland-primary" />
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-woodland-primary mb-4">
             <span style={{ fontFamily: 'Bebas Neue, cursive' }}>
               Community Updates
             </span>
@@ -39,13 +39,13 @@ const Announcements = () => {
           {/* Announcements Column */}
           <div className="bg-gray-50 rounded-xl p-6 sm:p-8 border border-gray-200 shadow-lg">
             <div className="flex items-center space-x-2 mb-6">
-              <Megaphone className="w-5 h-5 text-blue-600" />
-              <h3 className="text-2xl font-bold text-gray-900">Announcements</h3>
+              <Megaphone className="w-5 h-5 text-woodland-primary" />
+              <h3 className="text-2xl font-bold text-woodland-light">Announcements</h3>
             </div>
 
             {/* Header */}
             <div className="border-b border-gray-300 pb-4 mb-6">
-              <h4 className="text-xl font-bold text-blue-800 mb-1">FROM OUR PRESIDENT</h4>
+              <h4 className="text-xl font-bold text-woodland-primary mb-1">FROM OUR PRESIDENT</h4>
               <p className="text-gray-600 text-sm">June 4, 2025</p>
             </div>
 
@@ -129,7 +129,7 @@ const Announcements = () => {
               {/* Read More Button */}
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="flex items-center space-x-2 text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200 mt-6"
+                className="flex items-center space-x-2 text-woodland-primary hover:text-woodland-dark font-medium transition-colors duration-200 mt-6"
               >
                 <span>{isExpanded ? 'Read Less' : 'Read More'}</span>
                 {isExpanded ? (
@@ -142,15 +142,15 @@ const Announcements = () => {
           </div>
 
           {/* Upcoming Events Column */}
-          <div className="bg-blue-50 rounded-xl p-6 sm:p-8 border border-blue-200 shadow-lg">
+          <div className="bg-woodland-light rounded-xl p-6 sm:p-8 border border-woodland-light shadow-lg">
             <div className="flex items-center space-x-2 mb-6">
-              <Calendar className="w-5 h-5 text-blue-600" />
-              <h3 className="text-2xl font-bold text-gray-900">Upcoming Events</h3>
+              <Calendar className="w-5 h-5 text-woodland-primary" />
+              <h3 className="text-2xl font-bold text-woodland-primary">Upcoming Events</h3>
             </div>
 
             {/* Meeting Info Header */}
             <div className="bg-white p-4 rounded-lg border border-blue-200 mb-6">
-              <h4 className="font-bold text-blue-800 mb-2">Woodland Mobile Home Association Inc.</h4>
+              <h4 className="font-bold text-woodland-dark mb-2">Woodland Mobile Home Association Inc.</h4>
               <p className="text-gray-700 text-sm mb-1">
                 <strong>Monthly Meetings:</strong> Second Monday of the month at 6:30 PM
               </p>
@@ -201,7 +201,7 @@ const Announcements = () => {
             {/* View Full Calendar Button */}
             <Link 
               href="/calendar"
-              className="block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg text-center transition-colors duration-200"
+              className="block w-full bg-woodland-forest hover:bg-woodland-primary text-white font-semibold py-3 px-6 rounded-lg text-center transition-colors duration-200"
             >
               View Full Calendar
             </Link>

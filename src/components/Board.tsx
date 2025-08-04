@@ -128,7 +128,7 @@ const Board: React.FC = () => {
           align-items: center;
           justify-content: center;
           overflow: hidden;
-          background-color: #d9edfd;
+          background-color: #ede5d1;
         }
 
         .animated-background {
@@ -137,7 +137,7 @@ const Board: React.FC = () => {
           left: 0;
           width: 100%;
           height: 100%;
-          background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+          background: linear-gradient(-45deg, #26625d, #329790, #b8d4d1, #1a4843, #ede5d1, #d9cdb5);
           background-size: 400% 400%;
           animation: gradientBG 15s ease infinite;
         }
@@ -179,6 +179,7 @@ const Board: React.FC = () => {
           background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/24650/1.png');
           background-size: auto 136px;
           z-index: 6;
+          filter: brightness(2.0) contrast(0.5) saturate(0);
         }
 
         .layer-2 {
@@ -186,6 +187,7 @@ const Board: React.FC = () => {
           background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/24650/2.png');
           background-size: auto 145px;
           z-index: 5;
+          filter: brightness(1.8) contrast(0.5) saturate(0);
         }
 
         .layer-3 {
@@ -193,6 +195,7 @@ const Board: React.FC = () => {
           background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/24650/3.png');
           background-size: auto 158px;
           z-index: 4;
+          filter: brightness(1.6) contrast(0.5) saturate(0);
         }
 
         .layer-4 {
@@ -200,6 +203,7 @@ const Board: React.FC = () => {
           background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/24650/4.png');
           background-size: auto 468px;
           z-index: 3;
+          filter: brightness(1.4) contrast(0.5) saturate(0);
         }
 
         .layer-5 {
@@ -207,6 +211,7 @@ const Board: React.FC = () => {
           background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/24650/5.png');
           background-size: auto 311px;
           z-index: 2;
+          filter: brightness(1.2) contrast(0.5) saturate(0);
         }
 
         .layer-6 {
@@ -214,6 +219,7 @@ const Board: React.FC = () => {
           background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/24650/6.png');
           background-size: auto 222px;
           z-index: 1;
+          filter: brightness(1.0) contrast(0.5) saturate(0);
         }
 
         .bike-1, .bike-2 {
@@ -224,10 +230,12 @@ const Board: React.FC = () => {
           bottom: 100px;
           z-index: 7;
           animation: parallax_bike linear 10s infinite both;
+          filter: brightness(1.5) contrast(0.6) saturate(0);
         }
 
         .bike-2 {
           animation: parallax_bike linear 15s infinite both;
+          filter: brightness(1.3) contrast(0.6) saturate(0);
         }
 
         @keyframes parallax_fg {  
@@ -276,7 +284,7 @@ const Board: React.FC = () => {
         }
 
         .board-content {
-          background: linear-gradient(180deg, #ffffff, #f8f9fa);
+          background: linear-gradient(180deg, #ede5d1, #d9cdb5);
           padding: 4rem 2rem;
         }
 
@@ -288,7 +296,7 @@ const Board: React.FC = () => {
         .section-title {
           font-size: 1.5rem;
           font-weight: 600;
-          color: #374151;
+          color: #26625d;
           text-align: center;
           margin-bottom: 2rem;
           text-transform: uppercase;
@@ -314,23 +322,23 @@ const Board: React.FC = () => {
         .glowing-card {
           position: relative;
           border-radius: 1.2rem;
-          border: 1px solid rgba(0, 0, 0, 0.1);
-          background: linear-gradient(8deg, #ffffff 75%, #f9fafb 75.5%);
+          border: 1px solid rgba(38, 98, 93, 0.1);
+          background: linear-gradient(8deg, #ede5d1 75%, #e6dcc6 75.5%);
           padding: 1.5rem;
           transition: transform 0.2s ease;
           isolation: isolate;
           transform: translate3d(0, 0, 0.01px);
           box-shadow:
-            rgba(0, 0, 0, 0.05) 0px 1px 2px,
-            rgba(0, 0, 0, 0.05) 0px 2px 4px,
-            rgba(0, 0, 0, 0.05) 0px 4px 8px,
-            rgba(0, 0, 0, 0.05) 0px 8px 16px,
-            rgba(0, 0, 0, 0.05) 0px 16px 32px;
+            rgba(38, 98, 93, 0.05) 0px 1px 2px,
+            rgba(38, 98, 93, 0.05) 0px 2px 4px,
+            rgba(38, 98, 93, 0.05) 0px 4px 8px,
+            rgba(38, 98, 93, 0.05) 0px 8px 16px,
+            rgba(38, 98, 93, 0.05) 0px 16px 32px;
         }
 
         .glowing-card.officer {
-          background: linear-gradient(8deg, #fef7ff 75%, #faf5ff 75.5%);
-          border: 1px solid rgba(147, 51, 234, 0.2);
+          background: linear-gradient(8deg, #b8d4d1 75%, #a3cac7 75.5%);
+          border: 1px solid rgba(38, 98, 93, 0.3);
         }
 
         .glowing-card::before,
@@ -355,16 +363,16 @@ const Board: React.FC = () => {
         .glowing-card::before {
           border: 1px solid transparent;
           background:
-            linear-gradient(#ffffff 0 100%) padding-box,
+            linear-gradient(#ede5d1 0 100%) padding-box,
             linear-gradient(rgba(0, 0, 0, 0) 0% 100%) border-box,
-            radial-gradient(at 80% 55%, hsla(268,100%,76%,1) 0px, transparent 50%) border-box,
-            radial-gradient(at 69% 34%, hsla(349,100%,74%,1) 0px, transparent 50%) border-box,
-            radial-gradient(at 8% 6%, hsla(136,100%,78%,1) 0px, transparent 50%) border-box,
-            radial-gradient(at 41% 38%, hsla(192,100%,64%,1) 0px, transparent 50%) border-box,
-            radial-gradient(at 86% 85%, hsla(186,100%,74%,1) 0px, transparent 50%) border-box,
-            radial-gradient(at 82% 18%, hsla(52,100%,65%,1) 0px, transparent 50%) border-box,
-            radial-gradient(at 51% 4%, hsla(12,100%,72%,1) 0px, transparent 50%) border-box,
-            linear-gradient(#c299ff 0 100%) border-box;
+            radial-gradient(at 80% 55%, hsla(166,35%,58%,1) 0px, transparent 50%) border-box,
+            radial-gradient(at 69% 34%, hsla(166,45%,45%,1) 0px, transparent 50%) border-box,
+            radial-gradient(at 8% 6%, hsla(184,48%,78%,1) 0px, transparent 50%) border-box,
+            radial-gradient(at 41% 38%, hsla(166,55%,64%,1) 0px, transparent 50%) border-box,
+            radial-gradient(at 86% 85%, hsla(184,38%,74%,1) 0px, transparent 50%) border-box,
+            radial-gradient(at 82% 18%, hsla(37,35%,65%,1) 0px, transparent 50%) border-box,
+            radial-gradient(at 51% 4%, hsla(166,48%,45%,1) 0px, transparent 50%) border-box,
+            linear-gradient(#26625d 0 100%) border-box;
           opacity: calc((var(--pointer-distance) - var(--color-sens)) / (100 - var(--color-sens)));
           mask-image: conic-gradient(
             from var(--pointer-angle) at center, 
@@ -378,14 +386,14 @@ const Board: React.FC = () => {
         .glowing-card::after {
           border: 1px solid transparent;
           background:
-            radial-gradient(at 80% 55%, hsla(268,100%,76%,1) 0px, transparent 50%) padding-box,
-            radial-gradient(at 69% 34%, hsla(349,100%,74%,1) 0px, transparent 50%) padding-box,
-            radial-gradient(at 8% 6%, hsla(136,100%,78%,1) 0px, transparent 50%) padding-box,
-            radial-gradient(at 41% 38%, hsla(192,100%,64%,1) 0px, transparent 50%) padding-box,
-            radial-gradient(at 86% 85%, hsla(186,100%,74%,1) 0px, transparent 50%) padding-box,
-            radial-gradient(at 82% 18%, hsla(52,100%,65%,1) 0px, transparent 50%) padding-box,
-            radial-gradient(at 51% 4%, hsla(12,100%,72%,1) 0px, transparent 50%) padding-box,
-            linear-gradient(#c299ff 0 100%) padding-box;
+            radial-gradient(at 80% 55%, hsla(166,35%,58%,1) 0px, transparent 50%) padding-box,
+            radial-gradient(at 69% 34%, hsla(166,45%,45%,1) 0px, transparent 50%) padding-box,
+            radial-gradient(at 8% 6%, hsla(184,48%,78%,1) 0px, transparent 50%) padding-box,
+            radial-gradient(at 41% 38%, hsla(166,55%,64%,1) 0px, transparent 50%) padding-box,
+            radial-gradient(at 86% 85%, hsla(184,38%,74%,1) 0px, transparent 50%) padding-box,
+            radial-gradient(at 82% 18%, hsla(37,35%,65%,1) 0px, transparent 50%) padding-box,
+            radial-gradient(at 51% 4%, hsla(166,48%,45%,1) 0px, transparent 50%) padding-box,
+            linear-gradient(#26625d 0 100%) padding-box;
           mask-image:
             linear-gradient(to bottom, black, black),
             radial-gradient(ellipse at 50% 50%, black 40%, transparent 65%),
@@ -420,19 +428,19 @@ const Board: React.FC = () => {
           inset: 2rem;
           border-radius: inherit;
           box-shadow:
-            inset 0 0 0 1px hsl(270deg 70% 60% / 60%),
-            inset 0 0 2px 2px hsl(270deg 70% 60% / 50%),
-            inset 0 0 5px 1px hsl(270deg 70% 60% / 40%),
-            inset 0 0 8px 1px hsl(270deg 70% 60% / 30%),
-            inset 0 0 15px 0 hsl(270deg 70% 60% / 25%),
-            inset 0 0 25px 2px hsl(270deg 70% 60% / 15%),
-            inset 0 0 50px 2px hsl(270deg 70% 60% / 5%),
-            0 0 2px 2px hsl(270deg 70% 60% / 50%),
-            0 0 5px 1px hsl(270deg 70% 60% / 40%),
-            0 0 8px 1px hsl(270deg 70% 60% / 30%),
-            0 0 15px 0 hsl(270deg 70% 60% / 25%),
-            0 0 25px 2px hsl(270deg 70% 60% / 15%),
-            0 0 50px 2px hsl(270deg 70% 60% / 5%);
+            inset 0 0 0 1px hsl(166deg 35% 45% / 60%),
+            inset 0 0 2px 2px hsl(166deg 35% 45% / 50%),
+            inset 0 0 5px 1px hsl(166deg 35% 45% / 40%),
+            inset 0 0 8px 1px hsl(166deg 35% 45% / 30%),
+            inset 0 0 15px 0 hsl(166deg 35% 45% / 25%),
+            inset 0 0 25px 2px hsl(166deg 35% 45% / 15%),
+            inset 0 0 50px 2px hsl(166deg 35% 45% / 5%),
+            0 0 2px 2px hsl(166deg 35% 45% / 50%),
+            0 0 5px 1px hsl(166deg 35% 45% / 40%),
+            0 0 8px 1px hsl(166deg 35% 45% / 30%),
+            0 0 15px 0 hsl(166deg 35% 45% / 25%),
+            0 0 25px 2px hsl(166deg 35% 45% / 15%),
+            0 0 50px 2px hsl(166deg 35% 45% / 5%);
         }
 
         .inner {
@@ -466,20 +474,20 @@ const Board: React.FC = () => {
         .member-phone {
           display: inline-block;
           font-size: 1rem;
-          color: #3b82f6;
+          color: #26625d;
           text-decoration: none;
           font-weight: 500;
           transition: color 0.2s ease;
           padding: 0.5rem 1rem;
-          border: 1px solid rgba(59, 130, 246, 0.3);
+          border: 1px solid rgba(38, 98, 93, 0.3);
           border-radius: 0.5rem;
-          background: rgba(59, 130, 246, 0.1);
+          background: rgba(38, 98, 93, 0.1);
         }
 
         .member-phone:hover {
-          color: #2563eb;
-          background: rgba(59, 130, 246, 0.2);
-          border-color: rgba(59, 130, 246, 0.5);
+          color: #1e524e;
+          background: rgba(38, 98, 93, 0.2);
+          border-color: rgba(38, 98, 93, 0.5);
         }
 
         @media (max-width: 768px) {

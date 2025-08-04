@@ -1,6 +1,6 @@
-import Hero from "./components/Hero";
-import QuickLinks from "./components/QuickLinks";
-import Announcements from "./components/Announcements";
+import Hero from "@/components/Hero";
+import QuickLinks from "@/components/QuickLinks";
+import Announcements from "@/components/Announcements";
 
 export default function Home() {
   return (
