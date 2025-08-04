@@ -25,43 +25,48 @@ const FAQ: React.FC = () => {
   const faqData: FAQItem[] = [
     {
       id: 1,
-      question: "What are the community rules and regulations?",
-      answer: "Our community has established guidelines to ensure a peaceful and enjoyable living environment for all residents. These include quiet hours from 10 PM to 8 AM, proper maintenance of your property, parking regulations, and pet policies. A complete copy of our community rules is available at the office and online."
+      question: "What are the annual community fees?",
+      answer: "The annual community fee is $7,500 per year, paid annually. This fee covers community maintenance, amenities, administration, and various services that help maintain our beautiful Woodland Manor community. Payment is due at the beginning of each year, and we offer convenient payment options for your convenience."
     },
     {
       id: 2,
-      question: "How do I pay my monthly fees?",
-      answer: "Monthly fees can be paid through several convenient methods: online through our resident portal, by mail with a check, automatic bank draft, or in person at the community office during business hours. We also accept major credit cards for online payments."
+      question: "What are the community rules and regulations?",
+      answer: "Coming soon - Detailed community rules and regulations information will be available here."
     },
     {
       id: 3,
-      question: "What amenities are included in the community?",
-      answer: "Woodland Manor offers a variety of amenities including a community clubhouse, swimming pool, fitness center, walking trails, playground area, and community gardens. We also have regular social events and activities organized by our resident committee."
+      question: "How do I pay my monthly fees?",
+      answer: "Awaiting input - Payment methods and procedures information coming soon."
     },
     {
       id: 4,
-      question: "How do I report maintenance issues?",
-      answer: "Maintenance requests can be submitted online through our resident portal, by calling our maintenance hotline, or by visiting the office in person. For emergency repairs, please call our 24-hour emergency line. Non-emergency requests are typically addressed within 24-48 hours."
+      question: "What amenities are included in the community?",
+      answer: "Coming soon - Complete list of community amenities and facilities will be provided."
     },
     {
       id: 5,
-      question: "What is the guest and visitor policy?",
-      answer: "Guests are welcome in our community. Visitors staying longer than 14 days must be registered with the office. All guests must follow community rules and residents are responsible for their guests' conduct. Temporary parking passes are available for guest vehicles."
+      question: "How do I report maintenance issues?",
+      answer: "Awaiting input - Maintenance request procedures and contact information coming soon."
     },
     {
       id: 6,
-      question: "Are pets allowed in the community?",
-      answer: "Yes, we are a pet-friendly community. We allow up to 2 pets per household with some breed restrictions. All pets must be registered, vaccinated, and leashed when outside. There is a one-time pet registration fee and monthly pet rent. Please see the office for our complete pet policy."
+      question: "What is the guest and visitor policy?",
+      answer: "Coming soon - Guest and visitor policy details will be available here."
     },
     {
       id: 7,
-      question: "How can I get involved in community activities?",
-      answer: "We encourage resident participation! You can join our resident committee, volunteer for community events, participate in our social activities, or start your own interest group. Check our community bulletin board and newsletter for upcoming events and volunteer opportunities."
+      question: "Are pets allowed in the community?",
+      answer: "Awaiting input - Pet policy information and restrictions coming soon."
     },
     {
       id: 8,
+      question: "How can I get involved in community activities?",
+      answer: "Coming soon - Information about community involvement and volunteer opportunities."
+    },
+    {
+      id: 9,
       question: "What should I do in case of an emergency?",
-      answer: "For life-threatening emergencies, always call 911 first. For community-related emergencies like water leaks, electrical issues, or security concerns, call our 24-hour emergency line. We also have emergency procedures posted in the clubhouse and available online."
+      answer: "Awaiting input - Emergency procedures and contact information coming soon."
     }
   ];
 
