@@ -3,9 +3,9 @@ import React from 'react';
 import { FileText, Eye } from 'lucide-react';
 
 const Downloads: React.FC = () => {
-  const handleViewPDF = () => {
+  const handleViewPDF = (filename: string) => {
     // Open PDF in new tab
-    window.open('/documents/Rules.pdf', '_blank');
+    window.open(`/documents/${filename}`, '_blank');
   };
 
   return (
@@ -271,14 +271,29 @@ const Downloads: React.FC = () => {
       </div>
 
       <div className="downloads-grid">
-        <div className="download-card" onClick={handleViewPDF}>
+        <div className="download-card" onClick={() => handleViewPDF('Rules.pdf')}>
           <div className="card-content">
             <FileText className="file-icon" />
             <h3 className="card-title">Rules and Regulations</h3>
             <p className="card-description">Community guidelines and policies</p>
             <button className="view-button" onClick={(e) => {
               e.stopPropagation();
-              handleViewPDF();
+              handleViewPDF('Rules.pdf');
+            }}>
+              <Eye className="view-icon" />
+              View PDF
+            </button>
+          </div>
+        </div>
+        
+        <div className="download-card" onClick={() => handleViewPDF('GoverningDocuments.pdf')}>
+          <div className="card-content">
+            <FileText className="file-icon" />
+            <h3 className="card-title">Governing Documents</h3>
+            <p className="card-description">Official community governing documents and bylaws</p>
+            <button className="view-button" onClick={(e) => {
+              e.stopPropagation();
+              handleViewPDF('GoverningDocuments.pdf');
             }}>
               <Eye className="view-icon" />
               View PDF
