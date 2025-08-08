@@ -112,7 +112,7 @@ const Contact: React.FC = () => {
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-woodland-primary mb-2">Community Center</h3>
+                    <h3 className="text-xl font-bold text-woodland-primary mb-2">Clubhouse</h3>
                     <div className="text-gray-700">
                       <p>4119 Woodland Circle</p>
                       <p>DeLand, FL 32724</p>

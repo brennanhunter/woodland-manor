@@ -1,35 +1,44 @@
 @import "tailwindcss";
 
 @theme {
-  --color-woodland-primary: #26625d;
+  --color-woodland-primary: #41d3bd;
   --color-woodland-secondary: #1e524e;
   --color-woodland-accent: #329790;
   --color-woodland-forest: #1a4843;
-  --color-woodland-dark: #1a4843;
+  --color-woodland-dark: #0f3835;
   --color-woodland-light: #b8d4d1;
-  --color-woodland-cream: #ede5d1;
+  --color-woodland-cream: #fde74c;
+  
+  /* Woodland-inspired stone palette */
+  --color-stone-50: #f8f6f0;
+  --color-stone-100: #ede5d1;
+  --color-stone-200: #e0d5bb;
+  --color-stone-300: #d1c1a0;
+  --color-stone-400: #b5a185;
+  --color-stone-500: #94856e;
+  --color-stone-600: #7a6b58;
+  --color-stone-700: #5c5147;
+  --color-stone-800: #3d3630;
+  --color-stone-900: #2a2419;
 }
 
 :root {
-  --background: #ede5d1;
-  --foreground: #171717;
+  --background: #fde74c;
+  --foreground: #2a2419;
   
-  /* Legacy woodland colors for custom classes */
-  --woodland-primary: #26625d;
+  /* Woodland color palette */
+  --woodland-primary: #41d3bd;
   --woodland-secondary: #1e524e;
   --woodland-accent: #329790;
   --woodland-forest: #1a4843;
+  --woodland-dark: #0f3835;
   --woodland-light: #b8d4d1;
-  --woodland-cream: #ede5d1;
+  --woodland-cream: #fde74c;
   
-  /* Nature-inspired neutrals */
-  --stone-50: #ede5d1;
-  --stone-100: #e6dcc6;
-  --stone-200: #d9cdb5;
-  --stone-300: #c7b8a0;
-  --stone-500: #64748b;
-  --stone-700: #334155;
-  --stone-900: #1e293b;
+  /* Complementary warm accents */
+  --woodland-warm: #c6976a;
+  --woodland-gold: #d4a574;
+  --woodland-sage: #9cb3a8;
   
   /* Font variables */
   --font-bebas-neue: 'Bebas Neue', cursive;
@@ -37,8 +46,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f3835;
+    --foreground: #fde74c;
+    --woodland-cream: #2a2419;
+    --woodland-primary: #b8d4d1;
   }
 }
 
@@ -46,6 +57,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .font-bebas {
@@ -53,47 +65,37 @@ body {
 }
 
 /* Global Woodland Manor Design System Classes */
-.bg-woodland-cream {
-  background-color: var(--woodland-cream);
-}
-
-.text-woodland-primary {
-  color: var(--woodland-primary);
-}
-
-.text-woodland-secondary {
-  color: var(--woodland-secondary);
-}
-
 .woodland-gradient-bg {
-  background: linear-gradient(135deg, #ede5d1 0%, #d9cdb5 100%);
+  background: linear-gradient(135deg, var(--woodland-cream) 0%, var(--woodland-light) 50%, var(--woodland-cream) 100%);
 }
 
 .woodland-glass-card {
-  background: rgba(237, 229, 209, 0.9);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(237, 229, 209, 0.3);
+  background: rgba(253, 231, 76, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(65, 211, 189, 0.15);
   border-radius: 24px;
   box-shadow: 
-    0 4px 6px rgba(0, 0, 0, 0.05),
-    0 10px 15px rgba(0, 0, 0, 0.1),
-    0 20px 25px rgba(0, 0, 0, 0.1);
+    0 8px 32px rgba(65, 211, 189, 0.12),
+    0 4px 16px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.woodland-glass-shadow {
+  box-shadow: 
+    0 4px 16px rgba(65, 211, 189, 0.08),
+    0 8px 32px rgba(65, 211, 189, 0.04),
+    0 1px 4px rgba(0, 0, 0, 0.12);
 }
 
 .woodland-title {
   font-family: var(--font-bebas-neue), cursive;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--stone-900) 0%, #26625d 100%);
+  background: linear-gradient(135deg, var(--woodland-primary) 0%, var(--woodland-forest) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: 2px;
   line-height: 1.2;
-}
-
-.woodland-subtitle {
-  color: var(--stone-500);
-  line-height: 1.6;
 }
 
 .woodland-card-hover {
@@ -102,7 +104,9 @@ body {
 
 .woodland-card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 
+    0 12px 40px rgba(65, 211, 189, 0.15),
+    0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .woodland-nature-orbs::before {
@@ -113,10 +117,53 @@ body {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(38, 98, 93, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(50, 151, 144, 0.08) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(65, 211, 189, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(184, 212, 209, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(50, 151, 144, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(253, 231, 76, 0.04) 0%, transparent 40%);
   pointer-events: none;
+}
+
+/* Text shadow utilities for woodland theme */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(42, 36, 25, 0.3);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 8px rgba(42, 36, 25, 0.4);
+}
+
+/* Woodland button styles */
+.woodland-btn-primary {
+  background: linear-gradient(135deg, var(--woodland-primary) 0%, var(--woodland-secondary) 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(65, 211, 189, 0.3);
+}
+
+.woodland-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(65, 211, 189, 0.4);
+}
+
+.woodland-btn-secondary {
+  background: rgba(65, 211, 189, 0.1);
+  color: var(--woodland-primary);
+  border: 1px solid rgba(65, 211, 189, 0.3);
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.woodland-btn-secondary:hover {
+  background: rgba(65, 211, 189, 0.2);
+  border-color: rgba(65, 211, 189, 0.5);
+  transform: translateY(-1px);
 }
 
 /* Smooth transitions for all interactive elements */
@@ -127,11 +174,46 @@ a,
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Focus states for accessibility */
+/* Focus states for accessibility with woodland theme */
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #26625d;
+  outline: 2px solid var(--woodland-primary);
   outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(65, 211, 189, 0.2);
+}
+
+/* Woodland-specific utilities */
+.bg-woodland-primary { background-color: var(--woodland-primary); }
+.bg-woodland-secondary { background-color: var(--woodland-secondary); }
+.bg-woodland-accent { background-color: var(--woodland-accent); }
+.bg-woodland-light { background-color: var(--woodland-light); }
+.bg-woodland-cream { background-color: var(--woodland-cream); }
+.bg-woodland-forest { background-color: var(--woodland-forest); }
+
+.text-woodland-primary { color: var(--woodland-primary); }
+.text-woodland-secondary { color: var(--woodland-secondary); }
+.text-woodland-accent { color: var(--woodland-accent); }
+.text-woodland-light { color: var(--woodland-light); }
+.text-woodland-cream { color: var(--woodland-cream); }
+.text-woodland-forest { color: var(--woodland-forest); }
+
+.border-woodland-primary { border-color: var(--woodland-primary); }
+.border-woodland-secondary { border-color: var(--woodland-secondary); }
+.border-woodland-accent { border-color: var(--woodland-accent); }
+.border-woodland-light { border-color: var(--woodland-light); }
+.border-woodland-cream { border-color: var(--woodland-cream); }
+
+/* Woodland gradients */
+.woodland-gradient-primary {
+  background: linear-gradient(135deg, var(--woodland-primary) 0%, var(--woodland-secondary) 100%);
+}
+
+.woodland-gradient-accent {
+  background: linear-gradient(135deg, var(--woodland-accent) 0%, var(--woodland-primary) 100%);
+}
+
+.woodland-gradient-warm {
+  background: linear-gradient(135deg, var(--woodland-warm) 0%, var(--woodland-gold) 100%);
 }

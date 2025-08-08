@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface FAQItem {
   id: number;
@@ -26,357 +27,206 @@ const FAQ: React.FC = () => {
     {
       id: 1,
       question: "What are the annual community fees?",
-      answer: "The annual community fee is $7,500 per year, paid annually. This fee covers community maintenance, amenities, administration, and various services that help maintain our beautiful Woodland Manor community. Payment is due at the beginning of each year, and we offer convenient payment options for your convenience."
+      answer: "The annual HOA fee is $75 per year, due on January 1st. Late fees may be incurred if payment is not received on time. This fee covers clubhouse maintenance, street lights, clubhouse utilities, and lawyers fees."
     },
     {
       id: 2,
       question: "What are the community rules and regulations?",
-      answer: "Coming soon - Detailed community rules and regulations information will be available here."
+      answer: "You can view our complete community rules and regulations in the governing documents."
     },
     {
       id: 3,
-      question: "How do I pay my monthly fees?",
-      answer: "Awaiting input - Payment methods and procedures information coming soon."
-    },
-    {
-      id: 4,
-      question: "What amenities are included in the community?",
-      answer: "Coming soon - Complete list of community amenities and facilities will be provided."
-    },
-    {
-      id: 5,
-      question: "How do I report maintenance issues?",
-      answer: "Awaiting input - Maintenance request procedures and contact information coming soon."
+      question: "How do I pay my annual fees?",
+      answer: "Payment can be made by check or mail to: Woodland Mobile Home Association Inc., 4119 Woodland Circle, DeLand, FL 32724."
     },
     {
       id: 6,
       question: "What is the guest and visitor policy?",
-      answer: "Coming soon - Guest and visitor policy details will be available here."
+      answer: "Guests and visitors must follow the governing documents. Please refer to our community governing documents for detailed guest and visitor policies."
     },
     {
       id: 7,
       question: "Are pets allowed in the community?",
-      answer: "Awaiting input - Pet policy information and restrictions coming soon."
+      answer: "Yes, pets are allowed in the community. Please refer to the governing documents for any specific pet regulations and requirements."
     },
     {
       id: 8,
       question: "How can I get involved in community activities?",
-      answer: "Coming soon - Information about community involvement and volunteer opportunities."
+      answer: "We welcome volunteers! Whether you have a few hours to spare or want to take on a larger role, there are many ways to contribute to our community. From event planning to maintenance projects, your involvement helps make Woodland Manor the wonderful place we all call home. Contact our office to learn about current volunteer opportunities."
     },
     {
       id: 9,
       question: "What should I do in case of an emergency?",
-      answer: "Awaiting input - Emergency procedures and contact information coming soon."
+      answer: "Emergency contact information"
     }
   ];
 
   return (
-    <>
-      <style jsx>{`
-        .faq-container {
-          min-height: 100vh;
-          background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-          position: relative;
-          padding: 5rem 1rem;
-        }
+    <div className="min-h-screen bg-gradient-to-br from-woodland-cream to-yellow-300 relative py-20 px-4">
+      {/* Background overlay */}
+      <div className="absolute inset-0 woodland-nature-orbs opacity-60"></div>
 
-        .faq-container::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: 
-            radial-gradient(circle at 20% 50%, rgba(34, 139, 34, 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 40% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
-          pointer-events: none;
-        }
-
-        .content-wrapper {
-          max-width: 4xl;
-          margin: 0 auto;
-          position: relative;
-          z-index: 1;
-        }
-
-        .header-section {
-          text-align: center;
-          margin-bottom: 4rem;
-        }
-
-        .page-title {
-          font-size: 3.5rem;
-          font-weight: 700;
-          color: #1e293b;
-          margin-bottom: 1.5rem;
-          background: linear-gradient(135deg, #1e293b 0%, #059669 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          line-height: 1.2;
-          font-family: var(--font-bebas-neue), cursive;
-          letter-spacing: 2px;
-        }
-
-        .header-subtitle {
-          font-size: 1.25rem;
-          color: #64748b;
-          max-width: 600px;
-          margin: 0 auto 2rem;
-          line-height: 1.6;
-        }
-
-        .faq-image {
-          margin-bottom: 2rem;
-          filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
-        }
-
-        .faq-list {
-          background: rgba(255, 255, 255, 0.9);
-          backdrop-filter: blur(16px);
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          border-radius: 24px;
-          padding: 2rem;
-          box-shadow: 
-            0 4px 6px rgba(0, 0, 0, 0.05),
-            0 10px 15px rgba(0, 0, 0, 0.1),
-            0 20px 25px rgba(0, 0, 0, 0.1);
-          margin-bottom: 3rem;
-        }
-
-        .faq-item {
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 16px;
-          margin-bottom: 1rem;
-          overflow: hidden;
-          background: rgba(255, 255, 255, 0.7);
-          backdrop-filter: blur(8px);
-          transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-          border-color: rgba(34, 139, 34, 0.3);
-        }
-
-        .faq-button {
-          width: 100%;
-          padding: 1.5rem;
-          text-align: left;
-          background: transparent;
-          border: none;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          transition: all 0.3s ease;
-        }
-
-        .faq-button:hover {
-          background: rgba(34, 139, 34, 0.05);
-        }
-
-        .faq-question {
-          font-size: 1.25rem;
-          font-weight: 600;
-          color: #1e293b;
-          margin-right: 1rem;
-          line-height: 1.4;
-        }
-
-        .faq-icon {
-          width: 1.5rem;
-          height: 1.5rem;
-          color: #059669;
-          transition: transform 0.3s ease;
-        }
-
-        .faq-icon.open {
-          transform: rotate(180deg);
-        }
-
-        .faq-answer {
-          padding: 0 1.5rem 1.5rem;
-          background: rgba(248, 250, 252, 0.8);
-          border-top: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .faq-answer-text {
-          color: #64748b;
-          line-height: 1.7;
-          font-size: 1.1rem;
-        }
-
-        .contact-section {
-          background: linear-gradient(135deg, #059669 0%, #047857 100%);
-          color: white;
-          border-radius: 20px;
-          padding: 3rem;
-          text-align: center;
-        }
-
-        .contact-title {
-          font-size: 2rem;
-          font-weight: 700;
-          margin-bottom: 1rem;
-        }
-
-        .contact-text {
-          font-size: 1.2rem;
-          margin-bottom: 2rem;
-          opacity: 0.95;
-        }
-
-        .contact-buttons {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-          max-width: 400px;
-          margin: 0 auto;
-        }
-
-        .contact-button {
-          padding: 1rem 2rem;
-          border-radius: 12px;
-          font-weight: 600;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.5rem;
-        }
-
-        .contact-button.primary {
-          background: rgba(255, 255, 255, 0.2);
-          color: white;
-          border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .contact-button.primary:hover {
-          background: rgba(255, 255, 255, 0.3);
-          transform: translateY(-2px);
-        }
-
-        .contact-button.secondary {
-          background: white;
-          color: #059669;
-          border: 1px solid white;
-        }
-
-        .contact-button.secondary:hover {
-          background: #f8fafc;
-          transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-          .faq-container {
-            padding: 3rem 1rem;
-          }
-
-          .page-title {
-            font-size: 2.5rem;
-          }
-
-          .header-subtitle {
-            font-size: 1.1rem;
-          }
-
-          .faq-list {
-            padding: 1.5rem;
-          }
-
-          .contact-section {
-            padding: 2rem;
-          }
-
-          .contact-title {
-            font-size: 1.75rem;
-          }
-
-          .contact-buttons {
-            flex-direction: column;
-          }
-        }
-
-        @media (min-width: 640px) {
-          .contact-buttons {
-            flex-direction: row;
-          }
-        }
-      `}</style>
-
-      <div className="faq-container">
-        <div className="content-wrapper">
-          {/* Header Section */}
-          <div className="header-section">
-            <h1 className="page-title">FREQUENTLY ASKED QUESTIONS</h1>
-            <div className="faq-image">
-              <Image 
-                src="/images/FAQImage.png" 
-                alt="FAQ Illustration"
-                width={256}
-                height={192}
-                style={{ margin: '0 auto' }}
-                priority
-              />
-            </div>
-            <p className="header-subtitle">
-              Find answers to the most commonly asked questions about our community, 
-              policies, and services. If you don&apos;t find what you&apos;re looking for, 
-              feel free to contact our office.
-            </p>
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <h1 className="text-woodland-primary text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 woodland-title">
+            FREQUENTLY ASKED QUESTIONS
+          </h1>
+          <div className="mb-8">
+            <Image 
+              src="/images/FAQImage.png" 
+              alt="FAQ Illustration"
+              width={256}
+              height={192}
+              className="mx-auto drop-shadow-lg"
+              priority
+            />
           </div>
+          <p className="text-gray-700 text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
+            Find answers to the most commonly asked questions about our community, 
+            policies, and services. If you don&apos;t find what you&apos;re looking for, 
+            feel free to contact our office.
+          </p>
+        </div>
 
-          {/* FAQ Items */}
-          <div className="faq-list">
-            {faqData.map((item) => (
-              <div key={item.id} className="faq-item">
-                <button
-                  onClick={() => toggleItem(item.id)}
-                  className="faq-button"
-                >
-                  <h3 className="faq-question">
-                    {item.question}
-                  </h3>
-                  <div className={`faq-icon ${openItems.has(item.id) ? 'open' : ''}`}>
-                    <ChevronDown />
-                  </div>
-                </button>
-                
-                {openItems.has(item.id) && (
-                  <div className="faq-answer">
-                    <p className="faq-answer-text">
+        {/* FAQ Items */}
+        <div className="woodland-glass-card p-8 mb-12">
+          {faqData.map((item) => (
+            <div 
+              key={item.id} 
+              className="border border-white/20 rounded-2xl mb-4 overflow-hidden bg-white/70 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-woodland-primary/30"
+            >
+              <button
+                onClick={() => toggleItem(item.id)}
+                className="w-full p-6 text-left bg-transparent border-none cursor-pointer flex items-center justify-between transition-all duration-300 hover:bg-woodland-primary/5"
+              >
+                <h3 className="text-xl font-semibold text-slate-800 mr-4 leading-relaxed">
+                  {item.question}
+                </h3>
+                <div className={`w-6 h-6 text-woodland-primary transition-transform duration-300 ${openItems.has(item.id) ? 'rotate-180' : ''}`}>
+                  <ChevronDown />
+                </div>
+              </button>
+              
+              {openItems.has(item.id) && (
+                <div className="px-6 pb-6 bg-stone-50/80 border-t border-white/30">
+                  {item.id === 9 ? (
+                    <div className="text-gray-600 leading-relaxed text-lg">
+                      <p className="mb-4">For immediate life-threatening emergencies, call <strong>911</strong>.</p>
+                      <p className="mb-4">For non-emergency situations, contact the appropriate local authorities:</p>
+                      
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-semibold text-gray-800 mb-2">🚓 Law Enforcement:</h4>
+                          <ul className="ml-4 space-y-1">
+                            <li>• DeLand Police Department (Non-Emergency): (386) 943-8276</li>
+                            <li>• Volusia County Sheriff&apos;s Office - West Volusia: (386) 943-8276</li>
+                          </ul>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-semibold text-gray-800 mb-2">🚒 Fire & Rescue:</h4>
+                          <ul className="ml-4 space-y-1">
+                            <li>• DeLand Fire Department (Non-Emergency): (386) 943-8276</li>
+                          </ul>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-semibold text-gray-800 mb-2">🚑 Medical & Health Services:</h4>
+                          <ul className="ml-4 space-y-1">
+                            <li>• Florida Department of Health in Volusia County: (386) 822-6215</li>
+                            <li>• Special Needs Shelter Registration: (866) 345-0345</li>
+                          </ul>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-semibold text-gray-800 mb-2">🛣️ Road & Debris Management:</h4>
+                          <ul className="ml-4 space-y-1">
+                            <li>• DeLand Public Works: (386) 626-7190 (Mon-Fri, 8 AM-5 PM), After hours: (386) 626-7251</li>
+                            <li>• Volusia County Road & Bridge: (386) 822-6422</li>
+                            <li>• Florida Department of Transportation: (386) 740-3400</li>
+                          </ul>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-semibold text-gray-800 mb-2">🏠 Shelter & Evacuation:</h4>
+                          <ul className="ml-4 space-y-1">
+                            <li>• Votran Transportation: West Volusia (386) 943-7050</li>
+                            <li>• Volusia County School Board: West Volusia (386) 734-7190</li>
+                          </ul>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-semibold text-gray-800 mb-2">🐾 Animal Services:</h4>
+                          <ul className="ml-4 space-y-1">
+                            <li>• Volusia County Animal Control: (386) 740-5241</li>
+                          </ul>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-semibold text-gray-800 mb-2">🌪️ Disaster & Emergency Management:</h4>
+                          <ul className="ml-4 space-y-1">
+                            <li>• Volusia County Emergency Management: (386) 736-2700</li>
+                            <li>• Emergency Operations Center: (386) 258-4088</li>
+                            <li>• Citizens Information Center: (866) 345-0345</li>
+                          </ul>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-semibold text-gray-800 mb-2">📱 Emergency Alerts:</h4>
+                          <ul className="ml-4 space-y-1">
+                            <li>• AlertVolusia: Sign up at volusia.org/alerts or call (386) 258-4088</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  ) : item.id === 2 ? (
+                    <div className="text-gray-600 leading-relaxed text-lg">
+                      <p className="mb-4">{item.answer}</p>
+                      <Link 
+                        href="/documents/GoverningDocuments.pdf" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 bg-woodland-primary text-white rounded-lg font-semibold transition-all duration-300 hover:bg-woodland-primary/80 hover:-translate-y-1"
+                      >
+                        📄 View Governing Documents
+                      </Link>
+                    </div>
+                  ) : (
+                    <p className="text-gray-600 leading-relaxed text-lg">
                       {item.answer}
                     </p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Contact Section */}
-          <div className="contact-section">
-            <h3 className="contact-title">Still have questions?</h3>
-            <p className="contact-text">
-              Our friendly staff is here to help! Contact us during office hours 
-              or send us a message anytime.
-            </p>
-            <div className="contact-buttons">
-              <a href="tel:555-123-4567" className="contact-button primary">
-                Call Us: (555) 123-4567
-              </a>
-              <a href="mailto:info@woodlandmanor.com" className="contact-button secondary">
-                Email Us
-              </a>
+                  )}
+                </div>
+              )}
             </div>
+          ))}
+        </div>
+
+        {/* Contact Section */}
+        <div className="woodland-gradient-primary text-white rounded-3xl p-8 lg:p-12 text-center">
+          <h3 className="text-3xl font-bold mb-4">Still have questions?</h3>
+          <p className="text-xl mb-8 opacity-95 leading-relaxed">
+            Our friendly staff is here to help! Contact us during office hours 
+            or send us a message anytime.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <a 
+              href="tel:386-450-8718" 
+              className="flex-1 px-6 py-4 rounded-xl font-semibold text-white bg-white/20 border border-white/30 transition-all duration-300 hover:bg-white/30 hover:-translate-y-1 text-center"
+            >
+              Call Us: (386) 450-8718
+            </a>
+            <a 
+              href="mailto:lmurray39@gmail.com" 
+              className="flex-1 px-6 py-4 rounded-xl font-semibold text-woodland-primary bg-white border border-white transition-all duration-300 hover:bg-stone-50 hover:-translate-y-1 text-center"
+            >
+              Email Us
+            </a>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -4,326 +4,84 @@ import Link from 'next/link';
 
 export const About: React.FC = () => {
   return (
-    <>
-      <style jsx>{`
-        .about-container {
-          min-height: 100vh;
-          background: linear-gradient(135deg, #ede5d1 0%, #d9cdb5 100%);
-          position: relative;
-          padding: 5rem 1rem;
-        }
+    <div className="min-h-screen bg-woodland-cream relative py-20 px-4">
+      {/* Background overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-woodland-cream via-stone-100 to-stone-200 opacity-50"></div>
+      <div className="absolute inset-0 woodland-nature-orbs"></div>
 
-        .about-container::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: 
-            radial-gradient(circle at 20% 50%, rgba(38, 98, 93, 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 40% 80%, rgba(50, 151, 144, 0.08) 0%, transparent 50%);
-          pointer-events: none;
-        }
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Hero Section */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-woodland-primary mb-6 font-bebas tracking-wider">
+            About Woodland Manor
+          </h1>
+          <p className="text-xl text-gray-600 font-medium max-w-2xl mx-auto leading-relaxed">
+            Building a vibrant community where neighbors become family
+          </p>
+        </div>
 
-        .content-wrapper {
-          max-width: 4xl;
-          margin: 0 auto;
-          position: relative;
-          z-index: 1;
-        }
-
-        .hero-section {
-          text-align: center;
-          margin-bottom: 4rem;
-        }
-
-        .page-title {
-          font-size: 3.5rem;
-          font-weight: 700;
-          color: #1e293b;
-          margin-bottom: 1.5rem;
-          background: linear-gradient(135deg, #1e293b 0%, #26625d 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          line-height: 1.2;
-          font-family: var(--font-bebas-neue), cursive;
-          letter-spacing: 2px;
-        }
-
-        .hero-subtitle {
-          font-size: 1.5rem;
-          color: #64748b;
-          font-weight: 400;
-          max-width: 600px;
-          margin: 0 auto;
-          line-height: 1.6;
-        }
-
-        .content-section {
-          background: rgba(237, 229, 209, 0.9);
-          backdrop-filter: blur(16px);
-          border: 1px solid rgba(237, 229, 209, 0.3);
-          border-radius: 24px;
-          padding: 3rem;
-          box-shadow: 
-            0 4px 6px rgba(0, 0, 0, 0.05),
-            0 10px 15px rgba(0, 0, 0, 0.1),
-            0 20px 25px rgba(0, 0, 0, 0.1);
-          margin-bottom: 3rem;
-        }
-
-        .section-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-
-        .mission-card {
-          background: linear-gradient(135deg, rgba(38, 98, 93, 0.05) 0%, rgba(50, 151, 144, 0.05) 100%);
-          border: 1px solid rgba(38, 98, 93, 0.1);
-          border-radius: 16px;
-          padding: 2rem;
-          transition: all 0.3s ease;
-        }
-
-        .mission-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 8px 25px rgba(38, 98, 93, 0.15);
-          border-color: rgba(38, 98, 93, 0.2);
-        }
-
-        .card-icon {
-          width: 3rem;
-          height: 3rem;
-          background: linear-gradient(135deg, #26625d 0%, #1e524e 100%);
-          border-radius: 12px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 1.5rem;
-          box-shadow: 0 4px 14px rgba(38, 98, 93, 0.3);
-        }
-
-        .card-title {
-          font-size: 1.5rem;
-          font-weight: 700;
-          color: #1e293b;
-          margin-bottom: 1rem;
-        }
-
-        .card-text {
-          font-size: 1.1rem;
-          color: #64748b;
-          line-height: 1.7;
-          margin-bottom: 1.5rem;
-        }
-
-        .values-section {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-
-        .value-card {
-          background: rgba(237, 229, 209, 0.8);
-          border: 1px solid rgba(237, 229, 209, 0.2);
-          border-radius: 16px;
-          padding: 2rem;
-          text-align: center;
-          transition: all 0.3s ease;
-        }
-
-        .value-card:hover {
-          transform: translateY(-4px);
-          background: rgba(237, 229, 209, 0.95);
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .value-icon {
-          width: 4rem;
-          height: 4rem;
-          margin: 0 auto 1rem;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 1.5rem;
-        }
-
-        .community-icon {
-          background: linear-gradient(135deg, #26625d 0%, #1e524e 100%);
-          color: white;
-        }
-
-        .safety-icon {
-          background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-          color: white;
-        }
-
-        .engagement-icon {
-          background: linear-gradient(135deg, #329790 0%, #26625d 100%);
-          color: white;
-        }
-
-        .value-title {
-          font-size: 1.25rem;
-          font-weight: 600;
-          color: #1e293b;
-          margin-bottom: 0.75rem;
-        }
-
-        .value-text {
-          font-size: 1rem;
-          color: #64748b;
-          line-height: 1.6;
-        }
-
-        .cta-section {
-          text-align: center;
-          background: linear-gradient(135deg, #26625d 0%, #1e524e 100%);
-          color: white;
-          border-radius: 20px;
-          padding: 3rem;
-          margin-top: 3rem;
-        }
-
-        .cta-title {
-          font-size: 2rem;
-          font-weight: 700;
-          margin-bottom: 1rem;
-        }
-
-        .cta-text {
-          font-size: 1.2rem;
-          margin-bottom: 2rem;
-          opacity: 0.95;
-        }
-
-        .home-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          background: rgba(255, 255, 255, 0.2);
-          color: white;
-          text-decoration: none;
-          padding: 1rem 2rem;
-          border-radius: 12px;
-          font-weight: 600;
-          transition: all 0.3s ease;
-          border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .home-link:hover {
-          background: rgba(255, 255, 255, 0.3);
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (max-width: 768px) {
-          .about-container {
-            padding: 3rem 1rem;
-          }
-
-          .page-title {
-            font-size: 2.5rem;
-          }
-
-          .hero-subtitle {
-            font-size: 1.2rem;
-          }
-
-          .content-section {
-            padding: 2rem;
-          }
-
-          .values-section {
-            grid-template-columns: 1fr;
-          }
-
-          .cta-section {
-            padding: 2rem;
-          }
-
-          .cta-title {
-            font-size: 1.75rem;
-          }
-        }
-      `}</style>
-
-      <div className="about-container">
-        <div className="content-wrapper">
-          {/* Hero Section */}
-          <div className="hero-section">
-            <h1 className="page-title">About Woodland Manor</h1>
-            <p className="hero-subtitle">
-              Building a vibrant community where neighbors become family
+        {/* Main Content */}
+        <div className="woodland-glass-card p-8 lg:p-12 mb-12">
+          {/* Mission Card */}
+          <div className="bg-gradient-to-br from-woodland-primary/5 to-woodland-accent/5 border border-woodland-primary/10 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-woodland-primary/20 hover:border-woodland-primary/20">
+            <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-woodland-primary to-woodland-secondary rounded-xl mb-6 shadow-lg">
+              <span className="text-2xl">🏘️</span>
+            </div>
+            <h2 className="text-2xl font-bold text-woodland-primary mb-4">Our Mission</h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Woodland Manor is a vibrant community dedicated to enhancing the quality of life for all residents. Our mission is to foster a welcoming environment where neighbors become friends and families thrive.
             </p>
           </div>
 
-          {/* Main Content */}
-          <div className="content-section">
-            <div className="section-grid">
-              <div className="mission-card">
-                <div className="card-icon">
-                  🏘️
-                </div>
-                <h2 className="card-title">Our Mission</h2>
-                <p className="card-text">
-                  Woodland Manor is a vibrant community dedicated to enhancing the quality of life for all residents. Our mission is to foster a welcoming environment where neighbors become friends and families thrive.
-                </p>
+          {/* Core Values */}
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            <div className="bg-woodland-cream/80 border border-woodland-cream/50 rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-woodland-cream/95 hover:shadow-lg">
+              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-woodland-primary to-woodland-secondary rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-2xl">🤝</span>
               </div>
+              <h3 className="text-xl font-semibold text-woodland-primary mb-3">Community Spirit</h3>
+              <p className="text-gray-600 leading-relaxed">
+                We believe in the power of community connection and fostering meaningful relationships among residents.
+              </p>
             </div>
 
-            {/* Core Values */}
-            <div className="values-section">
-              <div className="value-card">
-                <div className="value-icon community-icon">
-                  🤝
-                </div>
-                <h3 className="value-title">Community Spirit</h3>
-                <p className="value-text">
-                  We believe in the power of community connection and fostering meaningful relationships among residents.
-                </p>
+            <div className="bg-woodland-cream/80 border border-woodland-cream/50 rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-woodland-cream/95 hover:shadow-lg">
+              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-2xl">🛡️</span>
               </div>
-
-              <div className="value-card">
-                <div className="value-icon safety-icon">
-                  🛡️
-                </div>
-                <h3 className="value-title">Safety & Beauty</h3>
-                <p className="value-text">
-                  We are committed to maintaining the beauty and safety of our neighborhood through active participation.
-                </p>
-              </div>
-
-              <div className="value-card">
-                <div className="value-icon engagement-icon">
-                  💬
-                </div>
-                <h3 className="value-title">Transparent Communication</h3>
-                <p className="value-text">
-                  Open dialogue and community engagement are the foundations of our decision-making process.
-                </p>
-              </div>
+              <h3 className="text-xl font-semibold text-woodland-primary mb-3">Safety & Beauty</h3>
+              <p className="text-gray-600 leading-relaxed">
+                We are committed to maintaining the beauty and safety of our neighborhood through active participation.
+              </p>
             </div>
-          </div>
 
-          {/* Call to Action */}
-          <div className="cta-section">
-            <h2 className="cta-title">Join Our Community</h2>
-            <p className="cta-text">
-              Together, we&apos;re making Woodland Manor a wonderful place to live, work, and play!
-            </p>
-            <Link href="/" className="home-link">
-              ← Return to Home
-            </Link>
+            <div className="bg-woodland-cream/80 border border-woodland-cream/50 rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-woodland-cream/95 hover:shadow-lg">
+              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-woodland-accent to-woodland-primary rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-2xl">💬</span>
+              </div>
+              <h3 className="text-xl font-semibold text-woodland-primary mb-3">Transparent Communication</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Open dialogue and community engagement are the foundations of our decision-making process.
+              </p>
+            </div>
           </div>
         </div>
+
+        {/* Call to Action */}
+        <div className="bg-gradient-to-br from-woodland-primary to-woodland-secondary text-white rounded-3xl p-8 lg:p-12 text-center">
+          <h2 className="text-3xl font-bold mb-4">Join Our Community</h2>
+          <p className="text-xl mb-8 opacity-95 leading-relaxed">
+            Together, we&apos;re making Woodland Manor a wonderful place to live, work, and play!
+          </p>
+          <Link 
+            href="/" 
+            className="inline-flex items-center gap-3 bg-white/20 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-white/30 hover:-translate-y-1 hover:shadow-lg border border-white/30"
+          >
+            <span>←</span>
+            Return to Home
+          </Link>
+        </div>
       </div>
-    </>
+    </div>
   );
-}
+};

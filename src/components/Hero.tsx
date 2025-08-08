@@ -1,30 +1,18 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 
 const Hero = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   return (
     <section className="relative flex items-center justify-center overflow-hidden py-8 sm:py-0" style={{ height: 'calc(100vh - 120px)' }}>
       {/* Background Image using Next.js Image */}
       <Image
-        src={isMobile ? "/images/WoodlandManorOfficeFallback.png" : "/images/WoodlandManorOffice.png"}
+        src="/images/WoodlandManorOffice.png"
         alt="Woodland Manor Office"
         fill
         style={{ objectFit: 'cover' }}
+        className="object-center sm:object-center md:object-left-top"
         priority
         quality={90}
       />

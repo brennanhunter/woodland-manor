@@ -220,7 +220,7 @@ const Calendar: React.FC = () => {
                   </div>
                   <div className="flex items-center gap-1">
                     <MapPin className="w-4 h-4" />
-                    Woodland Manor Community Center
+                    Woodland Manor Clubhouse
                   </div>
                 </div>
                 {event.special && (

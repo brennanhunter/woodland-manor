@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-woodland-primary text-white py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Logo/Title Section */}
@@ -13,7 +13,7 @@ const Footer = () => {
                 WOODLAND MANOR
               </span>
             </h3>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-woodland-cream leading-relaxed">
               Your premier community in the heart of DeLand, Florida. Where neighbors become family.
             </p>
           </div>
@@ -22,25 +22,25 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <nav className="space-y-2">
-              <Link href="/" className="block text-gray-400 hover:text-white transition-colors">
+              <Link href="/" className="block text-woodland-cream hover:text-yellow-300 transition-colors">
                 Home
               </Link>
-              <Link href="/about" className="block text-gray-400 hover:text-white transition-colors">
+              <Link href="/about" className="block text-woodland-cream hover:text-yellow-300 transition-colors">
                 About
               </Link>
-              <Link href="/board" className="block text-gray-400 hover:text-white transition-colors">
+              <Link href="/board" className="block text-woodland-cream hover:text-yellow-300 transition-colors">
                 Board
               </Link>
-              <Link href="/faq" className="block text-gray-400 hover:text-white transition-colors">
+              <Link href="/faq" className="block text-woodland-cream hover:text-yellow-300 transition-colors">
                 FAQ
               </Link>
-              <Link href="/downloads" className="block text-gray-400 hover:text-white transition-colors">
+              <Link href="/downloads" className="block text-woodland-cream hover:text-yellow-300 transition-colors">
                 Downloads
               </Link>
-              <Link href="/calendar" className="block text-gray-400 hover:text-white transition-colors">
+              <Link href="/calendar" className="block text-woodland-cream hover:text-yellow-300 transition-colors">
                 Calendar
               </Link>
-              <Link href="/contact" className="block text-gray-400 hover:text-white transition-colors">
+              <Link href="/contact" className="block text-woodland-cream hover:text-yellow-300 transition-colors">
                 Contact
               </Link>
             </nav>
@@ -49,16 +49,16 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
-            <div className="space-y-3 text-gray-400 text-sm">
+            <div className="space-y-3 text-woodland-cream text-sm">
               <div>
                 <p className="font-medium text-white mb-1">President - Lisa Cummings</p>
                 <p>
-                  <a href="tel:802-324-8027" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  <a href="tel:802-324-8027" className="text-yellow-300 hover:text-yellow-200 transition-colors">
                     802-324-8027
                   </a>
                 </p>
                 <p>
-                  <a href="mailto:lmurray39@gmail.com" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  <a href="mailto:lmurray39@gmail.com" className="text-yellow-300 hover:text-yellow-200 transition-colors">
                     lmurray39@gmail.com
                   </a>
                 </p>
@@ -67,13 +67,8 @@ const Footer = () => {
               <div>
                 <p className="font-medium text-white mb-1">Vice President - Joanne Pinheiro</p>
                 <p>
-                  <a href="tel:401-465-0528" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  <a href="tel:401-465-0528" className="text-yellow-300 hover:text-yellow-200 transition-colors">
                     401-465-0528
-                  </a>
-                </p>
-                <p>
-                  <a href="tel:386-507-5995" className="text-blue-400 hover:text-blue-300 transition-colors">
-                    386-507-5995
                   </a>
                 </p>
               </div>
@@ -81,14 +76,14 @@ const Footer = () => {
               <div>
                 <p className="font-medium text-white mb-1">Treasurer - Mary Hatmaker</p>
                 <p>
-                  <a href="tel:386-450-8718" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  <a href="tel:386-450-8718" className="text-yellow-300 hover:text-yellow-200 transition-colors">
                     386-450-8718
                   </a>
                 </p>
               </div>
 
-              <div className="pt-2 border-t border-gray-700">
-                <p className="text-xs text-gray-500">Mailing Address:</p>
+              <div className="pt-2 border-t border-woodland-sage">
+                <p className="text-xs text-woodland-cream/70">Mailing Address:</p>
                 <p>4119 Woodland Circle<br />DeLand, FL 32724</p>
               </div>
             </div>
@@ -96,14 +91,14 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section with Signature */}
-        <div className="border-t border-gray-800 pt-8 mt-8">
+        <div className="border-t border-woodland-sage pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
+            <p className="text-woodland-cream text-sm">
               © {new Date().getFullYear()} Woodland Manor HOA. All rights reserved.
             </p>
             
             {/* Your Signature */}
-            <div className="space-y-1 text-gray-400 text-center md:text-right">
+            <div className="space-y-1 text-woodland-cream text-center md:text-right">
               <p className="text-xs">
                 <a
                   href="https://xtremery.com"
