@@ -100,6 +100,9 @@ const Calendar: React.FC = () => {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Stay up to date with all Woodland Manor events and meetings
           </p>
+          <div className="mt-4 inline-block bg-gradient-to-r from-woodland-primary/15 via-woodland-primary/10 to-woodland-primary/15 border border-woodland-primary/30 text-woodland-primary px-5 py-3 rounded-xl text-sm font-medium shadow-sm backdrop-blur-sm">
+            No regular board meetings are held <span className="font-semibold">June through September</span>
+          </div>
         </div>
 
         {/* Calendar Controls */}
