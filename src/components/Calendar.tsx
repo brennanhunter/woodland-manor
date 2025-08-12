@@ -73,9 +73,6 @@ const Calendar: React.FC = () => {
     });
   };
 
-  const goToToday = () => {
-    setCurrentDate(new Date());
-  };
 
   const isToday = (day: number) => {
     if (!day) return false;
@@ -128,12 +125,7 @@ const Calendar: React.FC = () => {
               </button>
             </div>
             
-            <button 
-              onClick={goToToday}
-              className="bg-woodland-accent hover:bg-woodland-primary text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-200"
-            >
-              Today
-            </button>
+            {/* Today button removed as requested */}
           </div>
         </div>
 
