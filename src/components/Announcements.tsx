@@ -163,25 +163,25 @@ const Announcements = () => {
 
             <div className="space-y-4 mb-8">
               {upcomingEvents.map((event, index) => (
-                <div 
-                  key={index} 
-                  className={`p-4 rounded-lg border-l-4 ${
-                    event.special 
-                      ? 'bg-green-50 border-green-400' 
+                <div
+                  key={index}
+                  className={`p-4 rounded-lg border-l-4 transition-shadow ${
+                    event.special
+                      ? 'bg-[#fff1f3] border-[#ff2244] shadow-[0_0_0_1px_#ffd5dc,0_4px_12px_-2px_rgba(255,34,68,0.25)]'
                       : 'bg-white border-blue-400'
                   }`}
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <h4 className="font-bold text-gray-900 mb-1">{event.type}</h4>
-                      <p className="text-gray-600 text-sm mb-2">{event.date}</p>
-                      <div className="flex items-center space-x-1 text-gray-500 text-sm">
+                      <h4 className={`font-bold mb-1 ${event.special ? 'text-[#d1002f]' : 'text-gray-900'}`}>{event.type}</h4>
+                      <p className={`text-sm mb-2 ${event.special ? 'text-[#ff2244] font-medium' : 'text-gray-600'}`}>{event.date}</p>
+                      <div className={`flex items-center space-x-1 text-sm ${event.special ? 'text-[#ff3352] font-medium' : 'text-gray-500'}`}>
                         <Clock className="w-3 h-3" />
                         <span>{event.time}</span>
                       </div>
                       {event.special && (
-                        <p className="text-green-700 text-sm mt-2 font-medium">
-                          Annual meeting - All community members encouraged to attend
+                        <p className="mt-3 text-[#ff0037] text-sm font-semibold tracking-wide uppercase">
+                          Annual meeting - All community members encouraged to attend!
                         </p>
                       )}
                     </div>

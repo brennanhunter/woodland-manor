@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 
 interface BoardMemberProps {
   name: string;
@@ -16,44 +16,6 @@ interface BoardMemberData {
 
 const BoardMember: React.FC<BoardMemberProps> = ({ name, title, phone, isOfficer = false }) => {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>): void => {
-    if (!cardRef.current) return;
-    
-    const card = cardRef.current;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const width = rect.width;
-    const height = rect.height;
-    
-    const px = Math.max(0, Math.min(100, (100 / width) * x));
-    const py = Math.max(0, Math.min(100, (100 / height) * y));
-    
-    const cx = width / 2;
-    const cy = height / 2;
-    const dx = x - cx;
-    const dy = y - cy;
-    
-    let angle = 0;
-    if (dx !== 0 || dy !== 0) {
-      const angleRadians = Math.atan2(dy, dx);
-      angle = angleRadians * (180 / Math.PI) + 90;
-      if (angle < 0) angle += 360;
-    }
-    
-    let kx = Infinity;
-    let ky = Infinity;
-    if (dx !== 0) kx = cx / Math.abs(dx);
-    if (dy !== 0) ky = cy / Math.abs(dy);
-    const edge = Math.max(0, Math.min(1, 1 / Math.min(kx, ky))) * 100;
-    
-    card.style.setProperty('--pointer-x', `${px.toFixed(3)}%`);
-    card.style.setProperty('--pointer-y', `${py.toFixed(3)}%`);
-    card.style.setProperty('--pointer-angle', `${angle.toFixed(3)}deg`);
-    card.style.setProperty('--pointer-distance', `${edge.toFixed(3)}`);
-  };
 
   const formatPhone = (phoneNumber: string): string => {
     // Format phone number as (XXX) XXX-XXXX
@@ -67,10 +29,7 @@ const BoardMember: React.FC<BoardMemberProps> = ({ name, title, phone, isOfficer
   return (
     <div 
       ref={cardRef}
-      className={`glowing-card ${isHovered ? 'hovered' : ''} ${isOfficer ? 'officer' : ''}`}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className={`glowing-card ${isOfficer ? 'officer' : ''}`}
       style={{
         '--glow-sens': '30',
         '--color-sens': '50',
@@ -137,7 +96,7 @@ const Board: React.FC = () => {
           left: 0;
           width: 100%;
           height: 100%;
-          background: linear-gradient(-45deg, #41d3bd, #329790, #b8d4d1, #1a4843, #fde74c, #f5d93a);
+          background: linear-gradient(-45deg, var(--woodland-primary), #329790, #b8d4d1, #1a4843, #fde74c, #f5d93a);
           background-size: 400% 400%;
           animation: gradientBG 15s ease infinite;
         }
@@ -296,7 +255,7 @@ const Board: React.FC = () => {
         .section-title {
           font-size: 1.5rem;
           font-weight: 600;
-          color: #41d3bd;
+          color: var(--woodland-primary);
           text-align: center;
           margin-bottom: 2rem;
           text-transform: uppercase;
@@ -353,13 +312,6 @@ const Board: React.FC = () => {
           opacity: 0;
         }
 
-        .glowing-card.hovered::before,
-        .glowing-card.hovered::after,
-        .glowing-card.hovered .glow {
-          opacity: 1;
-          transition: opacity 0.25s ease-out;
-        }
-
         .glowing-card::before {
           border: 1px solid transparent;
           background:
@@ -372,7 +324,7 @@ const Board: React.FC = () => {
             radial-gradient(at 86% 85%, hsla(184,38%,74%,1) 0px, transparent 50%) border-box,
             radial-gradient(at 82% 18%, hsla(55,85%,65%,1) 0px, transparent 50%) border-box,
             radial-gradient(at 51% 4%, hsla(175,55%,55%,1) 0px, transparent 50%) border-box,
-            linear-gradient(#41d3bd 0 100%) border-box;
+            linear-gradient(var(--woodland-primary) 0 100%) border-box;
           opacity: calc((var(--pointer-distance) - var(--color-sens)) / (100 - var(--color-sens)));
           mask-image: conic-gradient(
             from var(--pointer-angle) at center, 
@@ -393,7 +345,7 @@ const Board: React.FC = () => {
             radial-gradient(at 86% 85%, hsla(184,38%,74%,1) 0px, transparent 50%) padding-box,
             radial-gradient(at 82% 18%, hsla(55,85%,65%,1) 0px, transparent 50%) padding-box,
             radial-gradient(at 51% 4%, hsla(175,55%,55%,1) 0px, transparent 50%) padding-box,
-            linear-gradient(#41d3bd 0 100%) padding-box;
+            linear-gradient(var(--woodland-primary) 0 100%) padding-box;
           mask-image:
             linear-gradient(to bottom, black, black),
             radial-gradient(ellipse at 50% 50%, black 40%, transparent 65%),
@@ -474,20 +426,30 @@ const Board: React.FC = () => {
         .member-phone {
           display: inline-block;
           font-size: 1rem;
-          color: #41d3bd;
+          color: var(--woodland-primary);
           text-decoration: none;
           font-weight: 500;
-          transition: color 0.2s ease;
+          transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
           padding: 0.5rem 1rem;
-          border: 1px solid rgba(65, 211, 189, 0.4);
+          border: 1px solid rgba(25, 213, 255, 0.4);
           border-radius: 0.5rem;
-          background: rgba(65, 211, 189, 0.1);
+          background: rgba(25, 213, 255, 0.08);
+          box-shadow: 0 0 0 0 rgba(25, 213, 255, 0.0);
         }
 
         .member-phone:hover {
-          color: #329790;
-          background: rgba(65, 211, 189, 0.2);
-          border-color: rgba(65, 211, 189, 0.6);
+          color: var(--woodland-primary);
+          background: rgba(25, 213, 255, 0.18);
+          border-color: rgba(25, 213, 255, 0.65);
+          box-shadow: 0 0 0 3px rgba(25, 213, 255, 0.25);
+        }
+
+        .member-phone:focus-visible {
+          outline: none;
+          color: var(--woodland-primary);
+          background: rgba(25, 213, 255, 0.22);
+          border-color: rgba(25, 213, 255, 0.75);
+          box-shadow: 0 0 0 4px rgba(25, 213, 255, 0.35);
         }
 
         @media (max-width: 768px) {

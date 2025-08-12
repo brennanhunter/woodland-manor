@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-woodland-primary: #41d3bd;
+  /* Updated to brighter blue-aqua primary */
+  --color-woodland-primary: #19d5ff; /* vivid aqua */
   --color-woodland-secondary: #1e524e;
   --color-woodland-accent: #329790;
   --color-woodland-forest: #1a4843;
@@ -27,7 +28,8 @@
   --foreground: #2a2419;
   
   /* Woodland color palette */
-  --woodland-primary: #41d3bd;
+  /* Updated to brighter blue-aqua primary */
+  --woodland-primary: #19d5ff; /* vivid aqua */
   --woodland-secondary: #1e524e;
   --woodland-accent: #329790;
   --woodland-forest: #1a4843;
@@ -49,7 +51,8 @@
     --background: #0f3835;
     --foreground: #fde74c;
     --woodland-cream: #2a2419;
-    --woodland-primary: #b8d4d1;
+  /* Dark mode variant slightly softened */
+  --woodland-primary: #37e3ff; /* dark mode aqua */
   }
 }
 

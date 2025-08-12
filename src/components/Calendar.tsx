@@ -171,7 +171,7 @@ const Calendar: React.FC = () => {
                           className={`
                             text-xs font-medium p-1 rounded mb-1 text-center cursor-pointer transition-all duration-200
                             ${event.special 
-                              ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white animate-pulse hover:from-orange-600 hover:to-orange-700' 
+                              ? 'bg-gradient-to-r from-[#ff3352] to-[#d1002f] text-white animate-pulse hover:from-[#ff2244] hover:to-[#b80029] shadow-[0_0_0_1px_#ffd5dc,0_4px_10px_-2px_rgba(255,34,68,0.35)]' 
                               : 'bg-woodland-primary text-white hover:bg-woodland-secondary'
                             }
                           `}
@@ -202,12 +202,12 @@ const Calendar: React.FC = () => {
                 className={`
                   bg-white rounded-xl p-6 border-2 transition-all duration-200 hover:shadow-lg hover:-translate-y-1
                   ${event.special 
-                    ? 'border-orange-400 bg-gradient-to-r from-orange-50 to-yellow-50' 
+                    ? 'border-[#ff2244] bg-[#fff1f3] shadow-[0_0_0_1px_#ffd5dc,0_4px_12px_-2px_rgba(255,34,68,0.25)]' 
                     : 'border-woodland-primary/20 hover:border-woodland-primary'
                   }
                 `}
               >
-                <div className={`text-lg font-bold mb-2 ${event.special ? 'text-orange-600' : 'text-woodland-primary'}`}>
+                <div className={`text-lg font-bold mb-2 ${event.special ? 'text-[#ff2244]' : 'text-woodland-primary'}`}>
                   {event.date}
                 </div>
                 <div className="text-gray-800 font-semibold mb-2">
@@ -224,8 +224,9 @@ const Calendar: React.FC = () => {
                   </div>
                 </div>
                 {event.special && (
-                  <div className="mt-3 text-orange-700 text-sm font-medium">
-                    Annual meeting - All community members encouraged to attend
+                  <div className="mt-3 p-3 rounded-md bg-[#fff1f3] border border-[#ff2244]/50">
+                    <p className="text-xs font-semibold text-[#d1002f] tracking-wide mb-1">Annual Board Meeting</p>
+                    <p className="text-sm font-bold text-[#ff2244] leading-snug">Annual meeting - All community members encouraged to attend!</p>
                   </div>
                 )}
               </div>

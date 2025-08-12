@@ -46,16 +46,7 @@ const Contact: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           
           {/* Left Side - Contact Information */}
-          <div className="space-y-8">
-            <div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-woodland-primary mb-4 font-bebas tracking-wide">
-                Get In Touch
-              </h1>
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                Have questions about our community? Need assistance with violations or want to volunteer? 
-                We&apos;re here to help make Woodland Manor the best place to call home.
-              </p>
-            </div>
+          <div className="space-y-8 lg:mt-16">
 
             {/* Contact Cards */}
             <div className="space-y-6">
@@ -85,21 +76,24 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              {/* Volunteer Coordinator */}
+              {/* Vice President */}
               <div className="woodland-glass-card p-6">
                 <div className="flex items-start space-x-4">
                   <div className="bg-woodland-accent text-white p-3 rounded-full">
-                    <MessageSquare className="w-6 h-6" />
+                    <User className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-woodland-primary mb-2">Volunteer Coordinator</h3>
-                    <p className="font-semibold text-gray-800 mb-1">Sandi Passante</p>
-                    <a href="tel:610-563-4998" className="flex items-center text-woodland-secondary hover:text-woodland-primary transition-colors">
+                    <h3 className="text-xl font-bold text-woodland-primary mb-2">Vice President</h3>
+                    <p className="font-semibold text-gray-800 mb-1">Joanne Pinheiro</p>
+                    <a href="tel:401-465-0528" className="flex items-center text-woodland-secondary hover:text-woodland-primary transition-colors">
                       <Phone className="w-4 h-4 mr-2" />
-                      (610) 563-4998
+                      (401) 465-0528
                     </a>
                     <p className="text-sm text-gray-600 mt-2">
-                      Contact for volunteer opportunities or assistance
+                      Contact for general board matters or assistance
+                    </p>
+                    <p className="text-sm text-gray-600 mt-1">
+                      For deliveries requiring signatures, please deliver to Joanne Pinero, 4149 Woodland Cir, DeLand, FL 32724.
                     </p>
                   </div>
                 </div>

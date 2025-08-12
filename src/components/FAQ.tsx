@@ -27,7 +27,7 @@ const FAQ: React.FC = () => {
     {
       id: 1,
       question: "What are the annual community fees?",
-      answer: "The annual HOA fee is $75 per year, due on January 1st. Late fees may be incurred if payment is not received on time. This fee covers clubhouse maintenance, street lights, clubhouse utilities, and lawyers fees."
+  answer: "The annual HOA fee is $75 per year, due on January 1st. Late fees may be incurred if payment is not received on time. This fee covers clubhouse maintenance, street lights, clubhouse utilities, lawyers fees, and mailings."
     },
     {
       id: 2,
@@ -37,7 +37,7 @@ const FAQ: React.FC = () => {
     {
       id: 3,
       question: "How do I pay my annual fees?",
-      answer: "Payment can be made by check or mail to: Woodland Mobile Home Association Inc., 4119 Woodland Circle, DeLand, FL 32724."
+      answer: "You can pay by mailing a check (payable to Woodland Mobile Home Association Inc.) to 4119 Woodland Circle, DeLand, FL 32724, or contact Treasurer Mary Hatmaker at (386) 450-8718 to arrange payment directly."
     },
     {
       id: 6,
@@ -52,7 +52,7 @@ const FAQ: React.FC = () => {
     {
       id: 8,
       question: "How can I get involved in community activities?",
-      answer: "We welcome volunteers! Whether you have a few hours to spare or want to take on a larger role, there are many ways to contribute to our community. From event planning to maintenance projects, your involvement helps make Woodland Manor the wonderful place we all call home. Contact our office to learn about current volunteer opportunities."
+      answer: "We welcome volunteers! Whether you have a few hours to spare or want to take on a larger role, there are many ways to contribute to our community. From event planning to maintenance projects, your involvement helps make Woodland Manor the wonderful place we all call home. Contact our President, Lisa Cummings, or our Volunteer Coordinator, Sandi Passante (610-563-4998) to learn about current opportunities."
     },
     {
       id: 9,
@@ -183,14 +183,24 @@ const FAQ: React.FC = () => {
                   ) : item.id === 2 ? (
                     <div className="text-gray-600 leading-relaxed text-lg">
                       <p className="mb-4">{item.answer}</p>
-                      <Link 
-                        href="/documents/GoverningDocuments.pdf" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center px-4 py-2 bg-woodland-primary text-white rounded-lg font-semibold transition-all duration-300 hover:bg-woodland-primary/80 hover:-translate-y-1"
-                      >
-                        📄 View Governing Documents
-                      </Link>
+                      <div className="flex flex-wrap gap-4">
+                        <Link 
+                          href="/documents/GoverningDocuments.pdf" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-woodland-primary text-white rounded-lg font-semibold transition-all duration-300 hover:bg-woodland-primary/80 hover:-translate-y-1"
+                        >
+                          📄 View Governing Documents
+                        </Link>
+                        <Link 
+                          href="/documents/RulesAndRegulations.pdf" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-white text-woodland-primary border border-woodland-primary/40 rounded-lg font-semibold transition-all duration-300 hover:bg-stone-100 hover:-translate-y-1"
+                        >
+                          📘 View Rules & Regulations
+                        </Link>
+                      </div>
                     </div>
                   ) : (
                     <p className="text-gray-600 leading-relaxed text-lg">
@@ -207,8 +217,7 @@ const FAQ: React.FC = () => {
         <div className="woodland-gradient-primary text-white rounded-3xl p-8 lg:p-12 text-center">
           <h3 className="text-3xl font-bold mb-4">Still have questions?</h3>
           <p className="text-xl mb-8 opacity-95 leading-relaxed">
-            Our friendly staff is here to help! Contact us during office hours 
-            or send us a message anytime.
+            Our friendly staff is here to help! Contact our President during the day or send a message anytime.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <a 
