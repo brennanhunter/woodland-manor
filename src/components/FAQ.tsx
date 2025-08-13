@@ -193,12 +193,20 @@ const FAQ: React.FC = () => {
                           📄 View Governing Documents
                         </Link>
                         <Link 
-                          href="/documents/RulesAndRegulations.pdf" 
+                          href="/documents/Rules.pdf" 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="inline-flex items-center px-4 py-2 bg-white text-woodland-primary border border-woodland-primary/40 rounded-lg font-semibold transition-all duration-300 hover:bg-stone-100 hover:-translate-y-1"
                         >
                           📘 View Rules & Regulations
+                        </Link>
+                        <Link 
+                          href="/documents/Woodland%20Mobile%20Home%20Association%20-%20Bylaws%20and%20Amendments.pdf" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-white text-woodland-primary border border-woodland-primary/40 rounded-lg font-semibold transition-all duration-300 hover:bg-stone-100 hover:-translate-y-1"
+                        >
+                          🏛️ View Bylaws & Amendments
                         </Link>
                       </div>
                     </div>

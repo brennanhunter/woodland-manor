@@ -68,6 +68,29 @@ const Downloads: React.FC = () => {
             View PDF
           </button>
         </div>
+
+        <div 
+          className="woodland-glass-card max-w-sm w-full min-h-80 grid place-content-center place-items-center text-center cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-xl hover:shadow-woodland-primary/20 hover:border-woodland-primary/30 p-10"
+          onClick={() => handleViewPDF('Woodland Mobile Home Association - Bylaws and Amendments.pdf')}
+        >
+          <FileText className="w-20 h-20 text-woodland-primary mb-6 drop-shadow-lg transition-all duration-300 hover:text-woodland-secondary hover:scale-110" />
+          <h3 className="text-slate-800 text-2xl font-bold mb-3 leading-tight">
+            Bylaws & Amendments
+          </h3>
+          <p className="text-gray-600 text-lg mb-6 leading-relaxed max-w-70">
+            Association bylaws with all adopted amendments
+          </p>
+          <button 
+            className="woodland-btn-primary flex items-center gap-3 text-white hover:shadow-lg hover:-translate-y-1"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleViewPDF('Woodland Mobile Home Association - Bylaws and Amendments.pdf');
+            }}
+          >
+            <Eye className="w-5 h-5 transition-transform duration-300 hover:scale-110" />
+            View PDF
+          </button>
+        </div>
       </div>
     </div>
   );
