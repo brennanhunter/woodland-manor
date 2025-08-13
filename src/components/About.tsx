@@ -35,7 +35,7 @@ export const About: React.FC = () => {
               We have formed a committee to deal with violations within our community. At this time, I would like to thank those of you who are in compliance, and those of you who have been in contact to work with us to remedy your individual situations.
             </p>
             <p>
-              You can contact your president, Lisa, at <a href="tel:802-324-8027" className="text-woodland-primary hover:underline">802-324-8027</a> or <a href="mailto:lmurray39@gmail.com" className="text-woodland-primary hover:underline">lmurray39@gmail.com</a> to talk about violations or get a set of our governing documents.
+              You can contact your president, Lisa, at <a href="tel:802-324-8027" className="text-woodland-primary hover:underline">802-324-8027</a> or <a href="mailto:woodlandhoa1973@gmail.com" className="text-woodland-primary hover:underline">woodlandhoa1973@gmail.com</a> to talk about violations or get a set of our governing documents.
             </p>
             <p>
               We have also set up a volunteer list to help people in need, that just cannot do it themselves or have no one here to help. You can contact Sandi Passante at <a href="tel:610-563-4998" className="text-woodland-primary hover:underline">610-563-4998</a>. You can also contact Sandi to have your name added to the volunteer committee.

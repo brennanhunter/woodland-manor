@@ -58,8 +58,8 @@ const Footer = () => {
                   </a>
                 </p>
                 <p>
-                  <a href="mailto:lmurray39@gmail.com" className="text-yellow-300 hover:text-yellow-200 transition-colors">
-                    lmurray39@gmail.com
+                  <a href="mailto:woodlandhoa1973@gmail.com" className="text-yellow-300 hover:text-yellow-200 transition-colors">
+                    woodlandhoa1973@gmail.com
                   </a>
                 </p>
               </div>

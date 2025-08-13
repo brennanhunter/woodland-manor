@@ -51,7 +51,7 @@ const FAQ: React.FC = () => {
     },
     {
       id: 8,
-      question: "How can I get involved in community activities?",
+      question: "How do I sign up to volunteer in our community?",
       answer: "We welcome volunteers! Whether you have a few hours to spare or want to take on a larger role, there are many ways to contribute to our community. From event planning to maintenance projects, your involvement helps make Woodland Manor the wonderful place we all call home. Contact our President, Lisa Cummings, or our Volunteer Coordinator, Sandi Passante (610-563-4998) to learn about current opportunities."
     },
     {
@@ -235,7 +235,7 @@ const FAQ: React.FC = () => {
               Call Us: (386) 450-8718
             </a>
             <a 
-              href="mailto:lmurray39@gmail.com" 
+              href="mailto:woodlandhoa1973@gmail.com" 
               className="flex-1 px-6 py-4 rounded-xl font-semibold text-woodland-primary bg-white border border-white transition-all duration-300 hover:bg-stone-50 hover:-translate-y-1 text-center"
             >
               Email Us

@@ -296,8 +296,9 @@ const Board: React.FC = () => {
         }
 
         .glowing-card.officer {
-          background: linear-gradient(8deg, #b8d4d1 75%, #a3cac7 75.5%);
-          border: 1px solid rgba(65, 211, 189, 0.4);
+          /* Match standard board member yellow styling */
+          background: linear-gradient(8deg, #fde74c 75%, #f5d93a 75.5%);
+          border: 1px solid rgba(65, 211, 189, 0.2);
         }
 
         .glowing-card::before,

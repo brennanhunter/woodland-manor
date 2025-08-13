@@ -77,8 +77,8 @@ const Announcements = () => {
                       802-324-8027
                     </a>{' '}
                     or{' '}
-                    <a href="mailto:lmurray39@gmail.com" className="text-blue-600 hover:text-blue-800 font-medium">
-                      lmurray39@gmail.com
+                    <a href="mailto:woodlandhoa1973@gmail.com" className="text-blue-600 hover:text-blue-800 font-medium">
+                      woodlandhoa1973@gmail.com
                     </a>{' '}
                     to talk about violations or get a set of our governing documents.
                   </p>

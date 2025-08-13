@@ -166,7 +166,7 @@ const Calendar: React.FC = () => {
                           className={`
                             text-xs font-medium p-1 rounded mb-1 text-center cursor-pointer transition-all duration-200
                             ${event.special 
-                              ? 'bg-gradient-to-r from-[#ff3352] to-[#d1002f] text-white animate-pulse hover:from-[#ff2244] hover:to-[#b80029] shadow-[0_0_0_1px_#ffd5dc,0_4px_10px_-2px_rgba(255,34,68,0.35)]' 
+                              ? 'bg-gradient-to-r from-[#ff3352] to-[#d1002f] text-white hover:from-[#ff2244] hover:to-[#b80029] shadow-[0_0_0_1px_#ffd5dc,0_4px_10px_-2px_rgba(255,34,68,0.35)]' 
                               : 'bg-woodland-primary text-white hover:bg-woodland-secondary'
                             }
                           `}
