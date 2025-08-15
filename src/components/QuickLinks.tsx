@@ -43,7 +43,7 @@ const QuickLinks = () => {
       description: 'Meet your HOA board members and leadership team'
     },
     {
-      title: 'FAQ&apos;s',
+      title: "FAQ's",
       href: '/faq',
       icon: HelpCircle,
       description: 'Find answers to common community questions'

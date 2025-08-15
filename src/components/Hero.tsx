@@ -8,7 +8,7 @@ const Hero = () => {
   <section className="relative flex items-start justify-start overflow-hidden pt-8 sm:pt-10 pb-4" style={{ minHeight: 'calc(100vh - 120px)' }}>
       {/* Background Image using Next.js Image */}
       <Image
-        src="/images/HeroImage.png"
+        src="/images/hero-image.png"
         alt="Woodland Manor Office"
         fill
         style={{ objectFit: 'cover' }}

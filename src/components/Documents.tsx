@@ -25,7 +25,7 @@ const Downloads: React.FC = () => {
       <div className="flex justify-center flex-wrap gap-8 max-w-6xl w-full relative z-10">
         <div 
           className="woodland-glass-card max-w-sm w-full min-h-80 grid place-content-center place-items-center text-center cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-xl hover:shadow-woodland-primary/20 hover:border-woodland-primary/30 p-10"
-          onClick={() => handleViewPDF('Rules.pdf')}
+          onClick={() => handleViewPDF('RulesAndRegulations.pdf')}
         >
           <FileText className="w-20 h-20 text-woodland-primary mb-6 drop-shadow-lg transition-all duration-300 hover:text-woodland-secondary hover:scale-110" />
           <h3 className="text-slate-800 text-2xl font-bold mb-3 capitalize leading-tight">
@@ -38,7 +38,7 @@ const Downloads: React.FC = () => {
             className="woodland-btn-primary flex items-center gap-3 text-white hover:shadow-lg hover:-translate-y-1"
             onClick={(e) => {
               e.stopPropagation();
-              handleViewPDF('Rules.pdf');
+              handleViewPDF('RulesAndRegulations.pdf');
             }}
           >
             <Eye className="w-5 h-5 transition-transform duration-300 hover:scale-110" />
