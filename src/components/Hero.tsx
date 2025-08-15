@@ -6,16 +6,30 @@ const Hero = () => {
 
   return (
   <section className="relative flex items-start justify-start overflow-hidden pt-8 sm:pt-10 pb-4" style={{ minHeight: 'calc(100vh - 120px)' }}>
-      {/* Background Image using Next.js Image */}
+      {/* Desktop Background Image */}
       <Image
         src="/images/hero-image.png"
         alt="Woodland Manor Office"
         fill
         style={{ objectFit: 'cover' }}
-        className="object-center sm:object-center md:object-left-top"
+        className="object-center sm:object-center md:object-left-top hidden sm:block"
         priority
         quality={90}
       />
+      
+      {/* Mobile Background Image */}
+      <Image
+        src="/images/mobile-hero.png"
+        alt="Woodland Manor Office"
+        fill
+        style={{ objectFit: 'contain', objectPosition: 'center' }}
+        className="block sm:hidden"
+        priority
+        quality={90}
+      />
+      
+      {/* Dark overlay for better text readability on mobile */}
+      <div className="absolute inset-0 bg-black/20 sm:bg-transparent z-5"></div>
       
       {/* Text Overlay with Glassmorphism */}
       <div className="relative z-10 text-left text-white pl-2 sm:pl-4 lg:pl-6 pr-4 w-full max-w-7xl">
