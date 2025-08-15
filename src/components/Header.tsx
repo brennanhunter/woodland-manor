@@ -47,7 +47,7 @@ const Header = () => {
                 Board
               </Link>
               <Link href="/faq" className="text-woodland-primary hover:text-woodland-secondary px-3 py-2 text-lg font-medium transition-colors">
-                FAQ
+                FAQ&apos;s
               </Link>
               <Link href="/downloads" className="text-woodland-primary hover:text-woodland-secondary px-3 py-2 text-lg font-medium transition-colors">
                 Downloads
@@ -112,7 +112,7 @@ const Header = () => {
                   onClick={closeMobileMenu}
                   className="block px-4 py-3 text-woodland-primary hover:text-woodland-secondary hover:bg-gray-50 transition-colors font-medium"
                 >
-                  FAQ
+                  FAQ&apos;s
                 </Link>
                 <Link 
                   href="/downloads" 

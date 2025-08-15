@@ -32,7 +32,7 @@ const Footer = () => {
                 Board
               </Link>
               <Link href="/faq" className="block text-woodland-cream hover:text-yellow-300 transition-colors">
-                FAQ
+                FAQ&apos;s
               </Link>
               <Link href="/downloads" className="block text-woodland-cream hover:text-yellow-300 transition-colors">
                 Downloads

@@ -10,8 +10,8 @@ const Contact: React.FC = () => {
       {/* Hero Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/images/woodland-plants.webp" 
-          alt="Woodland Plants" 
+          src="/images/WoodlandManorClubhouse.png" 
+          alt="Woodland Manor Clubhouse" 
           fill
           className="object-cover"
           priority
@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
             {/* Contact Cards */}
             <div className="space-y-6">
               {/* President Contact */}
-              <div className="woodland-glass-card p-6">
+              <div className="bg-woodland-cream/20 backdrop-blur-sm border border-woodland-primary/20 rounded-xl shadow-lg p-6">
                 <div className="flex items-start space-x-4">
                   <div className="bg-woodland-primary text-white p-3 rounded-full">
                     <User className="w-6 h-6" />
@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
               </div>
 
               {/* Vice President */}
-              <div className="woodland-glass-card p-6">
+              <div className="bg-woodland-cream/20 backdrop-blur-sm border border-woodland-primary/20 rounded-xl shadow-lg p-6">
                 <div className="flex items-start space-x-4">
                   <div className="bg-woodland-accent text-white p-3 rounded-full">
                     <User className="w-6 h-6" />
@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
               </div>
 
               {/* Community Address */}
-              <div className="woodland-glass-card p-6">
+              <div className="bg-woodland-cream/20 backdrop-blur-sm border border-woodland-primary/20 rounded-xl shadow-lg p-6">
                 <div className="flex items-start space-x-4">
                   <div className="bg-woodland-forest text-white p-3 rounded-full">
                     <MapPin className="w-6 h-6" />
@@ -99,7 +99,7 @@ const Contact: React.FC = () => {
         </div>
 
         {/* Quick Contact Bar */}
-        <div className="mt-16 woodland-glass-card p-6">
+        <div className="mt-16 bg-woodland-cream/20 backdrop-blur-sm border border-woodland-primary/20 rounded-xl shadow-lg p-6">
           <div className="text-center mb-4">
             <h3 className="text-xl font-bold text-woodland-primary mb-2">Quick Contact</h3>
             <p className="text-gray-600">Need immediate assistance? Reach out directly:</p>

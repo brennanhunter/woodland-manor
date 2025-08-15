@@ -52,7 +52,12 @@ const FAQ: React.FC = () => {
     {
       id: 8,
       question: "How do I sign up to volunteer in our community?",
-      answer: "We welcome volunteers! Whether you have a few hours to spare or want to take on a larger role, there are many ways to contribute to our community. From event planning to maintenance projects, your involvement helps make Woodland Manor the wonderful place we all call home. Contact our President, Lisa Cummings, or our Volunteer Coordinator, Sandi Passante (610-563-4998) to learn about current opportunities."
+      answer: "We welcome volunteers! Whether you have a few hours to spare or want to take on a larger role, there are many ways to contribute to our community. Your involvement helps make Woodland Manor the wonderful place we all call home. Contact our President, Lisa Cummings, or our Volunteer Coordinator, Sandi Passante (610-563-4998) to learn about current opportunities."
+    },
+    {
+      id: 10,
+      question: "As an owner, who do I contact to use the clubhouse?",
+      answer: "To use the clubhouse, contact Lisa Cummings, the President, at (802) 324-8027, or Mark Rice at (386) 717-7110."
     },
     {
       id: 9,
@@ -221,10 +226,10 @@ const FAQ: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <a 
-              href="tel:386-450-8718" 
+              href="tel:802-324-8027" 
               className="flex-1 px-6 py-4 rounded-xl font-semibold text-white bg-white/20 border border-white/30 transition-all duration-300 hover:bg-white/30 hover:-translate-y-1 text-center"
             >
-              Call Us: (386) 450-8718
+              Call Us: (802) 324-8027
             </a>
             <a 
               href="mailto:woodlandhoa1973@gmail.com" 
