@@ -2,7 +2,7 @@
 
 interface StructuredDataProps {
   type?: 'Organization' | 'LocalBusiness' | 'Event' | 'Article'
-  data?: any
+  data?: Record<string, unknown>
 }
 
 export default function StructuredData({ type = 'Organization', data }: StructuredDataProps) {
