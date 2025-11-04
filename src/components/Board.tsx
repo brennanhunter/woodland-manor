@@ -4,27 +4,16 @@ import React, { useRef } from 'react';
 interface BoardMemberProps {
   name: string;
   title: string;
-  phone: string;
   isOfficer?: boolean;
 }
 
 interface BoardMemberData {
   name: string;
   title?: string;
-  phone: string;
 }
 
-const BoardMember: React.FC<BoardMemberProps> = ({ name, title, phone, isOfficer = false }) => {
+const BoardMember: React.FC<BoardMemberProps> = ({ name, title, isOfficer = false }) => {
   const cardRef = useRef<HTMLDivElement>(null);
-
-  const formatPhone = (phoneNumber: string): string => {
-    // Format phone number as (XXX) XXX-XXXX
-    const cleaned = phoneNumber.replace(/\D/g, '');
-    if (cleaned.length === 10) {
-      return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)}-${cleaned.slice(6)}`;
-    }
-    return phoneNumber;
-  };
 
   return (
     <div 
@@ -44,9 +33,6 @@ const BoardMember: React.FC<BoardMemberProps> = ({ name, title, phone, isOfficer
         <div className="member-content">
           <h3 className="member-name">{name}</h3>
           <p className="member-title">{title}</p>
-          <a href={`tel:${phone}`} className="member-phone">
-            {formatPhone(phone)}
-          </a>
         </div>
       </div>
     </div>
@@ -55,21 +41,21 @@ const BoardMember: React.FC<BoardMemberProps> = ({ name, title, phone, isOfficer
 
 const Board: React.FC = () => {
   const officers: BoardMemberData[] = [
-    { name: "LISA CUMMINGS", title: "PRESIDENT", phone: "802-324-8027" },
-    { name: "JOANNE PINHEIRO", title: "VICE PRESIDENT", phone: "401-465-0528" },
-    { name: "MARY HATMAKER", title: "TREASURER/SECRETARY", phone: "386-450-8718" }
+    { name: "LISA CUMMINGS", title: "PRESIDENT" },
+    { name: "JOANNE PINHEIRO", title: "VICE PRESIDENT" },
+    { name: "MARY HATMAKER", title: "TREASURER/SECRETARY" }
   ];
 
   const directors: BoardMemberData[] = [
-    { name: "MARK RICE", phone: "386-717-7110" },
-    { name: "ALEX RIVEST", phone: "864-940-8381" },
-    { name: "SANDI PASSANTE", phone: "610-563-4998" },
-    { name: "PEGGY HOWARD", phone: "757-876-2140" },
-    { name: "CHRIS RIEL", phone: "386-349-3626" },
-    { name: "BUD CAROTHERS", phone: "386-748-8689" },
-    { name: "CHESTER INMAN", phone: "606-549-7370" },
-    { name: "TONY TERWILLIGER", phone: "802-557-1859" },
-    { name: "RON WESTON", phone: "802-310-4104" }
+    { name: "MARK RICE" },
+    { name: "ALEX RIVEST" },
+    { name: "SANDI PASSANTE" },
+    { name: "PEGGY HOWARD" },
+    { name: "CHRIS RIEL" },
+    { name: "BUD CAROTHERS" },
+    { name: "CHESTER INMAN" },
+    { name: "TONY TERWILLIGER" },
+    { name: "RON WESTON" }
   ];
 
   return (
@@ -511,7 +497,6 @@ const Board: React.FC = () => {
                   key={`officer-${index}`}
                   name={officer.name}
                   title={officer.title || 'OFFICER'}
-                  phone={officer.phone}
                   isOfficer={true}
                 />
               ))}
@@ -526,7 +511,6 @@ const Board: React.FC = () => {
                   key={`director-${index}`}
                   name={director.name}
                   title="BOARD MEMBER"
-                  phone={director.phone}
                   isOfficer={false}
                 />
               ))}
