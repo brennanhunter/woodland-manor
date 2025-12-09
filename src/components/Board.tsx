@@ -48,14 +48,13 @@ const Board: React.FC = () => {
 
   const directors: BoardMemberData[] = [
     { name: "MARK RICE" },
-    { name: "ALEX RIVEST" },
     { name: "SANDI PASSANTE" },
     { name: "PEGGY HOWARD" },
-    { name: "CHRIS RIEL" },
     { name: "BUD CAROTHERS" },
     { name: "CHESTER INMAN" },
     { name: "TONY TERWILLIGER" },
-    { name: "RON WESTON" }
+    { name: "RON WESTON" },
+    { name: "KARL BALDNER" }
   ];
 
   return (
