@@ -42,7 +42,7 @@ const BoardMember: React.FC<BoardMemberProps> = ({ name, title, isOfficer = fals
 const Board: React.FC = () => {
   const officers: BoardMemberData[] = [
     { name: "LISA CUMMINGS", title: "PRESIDENT" },
-    { name: "JOANNE PINHEIRO", title: "VICE PRESIDENT" },
+    { name: "VACANT", title: "VICE PRESIDENT" },
     { name: "MARY HATMAKER", title: "TREASURER/SECRETARY" }
   ];
 

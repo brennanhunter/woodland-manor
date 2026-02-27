@@ -68,10 +68,9 @@ const Page = () => {
                   "availableLanguage": "English"
                 },
                 {
-                  "@type": "ContactPoint", 
-                  "telephone": "+1-401-465-0528",
+                  "@type": "ContactPoint",
                   "contactType": "Vice President",
-                  "name": "Joanne Pinheiro",
+                  "name": "Vacant",
                   "areaServed": ["DeLand", "Volusia County", "Florida"],
                   "availableLanguage": "English"
                 }

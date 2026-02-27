@@ -61,16 +61,9 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-woodland-primary mb-2">Vice President</h3>
-                    <p className="font-semibold text-gray-800 mb-1">Joanne Pinheiro</p>
-                    <a href="tel:401-465-0528" className="flex items-center text-woodland-secondary hover:text-woodland-primary transition-colors">
-                      <Phone className="w-4 h-4 mr-2" />
-                      (401) 465-0528
-                    </a>
+                    <p className="font-semibold text-gray-800 mb-1">Vacant</p>
                     <p className="text-sm text-gray-600 mt-2">
-                      Contact for general board matters or assistance
-                    </p>
-                    <p className="text-sm text-gray-600 mt-1">
-                      For deliveries requiring signatures, please deliver to Joanne Pinero, 4149 Woodland Cir, DeLand, FL 32724.
+                      This position is currently vacant.
                     </p>
                   </div>
                 </div>

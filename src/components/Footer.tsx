@@ -65,12 +65,7 @@ const Footer = () => {
               </div>
               
               <div>
-                <p className="font-medium text-white mb-1">Vice President - Joanne Pinheiro</p>
-                <p>
-                  <a href="tel:401-465-0528" className="text-yellow-300 hover:text-yellow-200 transition-colors">
-                    401-465-0528
-                  </a>
-                </p>
+                <p className="font-medium text-white mb-1">Vice President - Vacant</p>
               </div>
 
               <div>
