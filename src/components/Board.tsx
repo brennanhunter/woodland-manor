@@ -42,19 +42,19 @@ const BoardMember: React.FC<BoardMemberProps> = ({ name, title, isOfficer = fals
 const Board: React.FC = () => {
   const officers: BoardMemberData[] = [
     { name: "LISA CUMMINGS", title: "PRESIDENT" },
-    { name: "VACANT", title: "VICE PRESIDENT" },
-    { name: "MARY HATMAKER", title: "TREASURER/SECRETARY" }
+    { name: "SANDRA PASSANTE", title: "VICE PRESIDENT" },
+    { name: "MARY HATMAKER", title: "TREASURER" },
+    { name: "PETRA MEZA", title: "SECRETARY" }
   ];
 
   const directors: BoardMemberData[] = [
     { name: "MARK RICE" },
-    { name: "SANDI PASSANTE" },
+    { name: "BUTCH BAIR" },
     { name: "PEGGY HOWARD" },
+    { name: "JOANNE PINHEIRO" },
     { name: "BUD CAROTHERS" },
     { name: "CHESTER INMAN" },
-    { name: "TONY TERWILLIGER" },
-    { name: "RON WESTON" },
-    { name: "KARL BALDNER" }
+    { name: "TONY TERWILLIGER" }
   ];
 
   return (
@@ -481,7 +481,7 @@ const Board: React.FC = () => {
           <div className="hero-content">
             <div className="hero-glass-card">
               <h1 className="hero-title">WOODLAND MANOR</h1>
-              <p className="hero-subtitle">Meet Your Board as of 4/1/25</p>
+              <p className="hero-subtitle">Meet Your Board as of 4/1/26</p>
             </div>
           </div>
         </section>
